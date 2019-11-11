@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Document</title>
-    <link rel="stylesheet" href="./public/css/reset.css">
-    <link rel="stylesheet" href="./public/css/animate.css">
-    <link rel="stylesheet" href="./public/iconfont/iconfont.css">
-    <!-- <script>
-         (function(win, lib) {
+ (function(win, lib) {
      var doc = win.document;
      var docEl = doc.documentElement;
      var metaEl = doc.querySelector('meta[name="viewport"]');
@@ -127,10 +116,3 @@
      }
 
  })(window, window['lib'] || (window['lib'] = {}));
-    </script> -->
-</head>
-<body>
-    <div id="app"></div>
-    <script ></script>
-</body>
-</html>

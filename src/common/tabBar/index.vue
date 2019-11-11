@@ -1,18 +1,13 @@
 <template>
-  <div id="app">
-    
-  </div>
+    <div>
+        classify
+    </div>
 </template>
-
 <script>
-
 export default {
-  name: 'app',
-  components: {
-  }
+    
 }
 </script>
-
 <style>
-
+    
 </style>
