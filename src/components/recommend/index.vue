@@ -1,60 +1,33 @@
 <template>
-  <div id="body" class="Classify-body">
-    <div class="frist">
-      <router-link to="/" tag="span" class="iconfont icon-fanhui"></router-link>
-      <span>分类</span>
-      <router-link to="/search" tag="span" class="iconfont icon-sousuo"></router-link>
-    </div>
-    <div class="header">
-      <router-link to="/city" tag="span" class="iconfont">
-        全国
-        <i class="iconfont icon-xiasanjiaoxing"></i>
-      </router-link>
-      <router-link to="/classify" tag="span" class="iconfont">
-        全部分类
-        <i class="iconfont icon-xiasanjiaoxing"></i>
-      </router-link>
-      <router-link to="#" tag="span" class="iconfont">
-        全部时间
-        <i class="iconfont icon-xiasanjiaoxing"></i>
-      </router-link>
-    </div>
-    <div class="main">
+  <div>
+    <ul class="recommend_list">
       <router-link
-        :to="'/detail/'+item.id"
-        class="mainbox"
-        v-for="(item,index) in content"
+      :to="'/detail/'+item.id"
+        v-for="(item,index) in recommends"
         :key="index"
-        :id="item.id"
-        tag="div"
+        tag="li"
       >
-        <img :src="item.urlPic" />
-        <div class="right">
-          <b class="name">{{item.name}}</b>
-          <span class="span1">{{item.time}}</span>
-          <span class=".span2">凯迪拉克中心</span>
-          <span class="span1">
-            <b class="red f14 mr5">{{item.price}}</b>
+        <a href="#">
+          <img :src="item.urlPic" class="imgs" />
+          <b class="db mt5 name">{{item.name}}</b>
+          <span class="gray9 db f11">{{item.time}}</span>
+          <span class="gray5 db f10">
+            <b class="red mr5 f13">{{item.price}}</b>起
           </span>
-        </div>
+        </a>
       </router-link>
-      <!-- 底部 -->
-      <Footer />
-    </div>
+    </ul>
   </div>
 </template>
+
 <script>
-import Footer from "../../components/footer";
+        // +'/'+item.name+'/'+item.price+'/'+item.time"
+
 export default {
-  name: "Classify",
-  components: {
-    Footer
-  },
+  name: "Recommond",
   data() {
     return {
-      icfont: "iconfont",
-      html: "&#xe642;",
-      content: [
+      recommends: [
         {
           urlPic:
             "https://static.228.cn/upload/2019/11/08/AfterTreatment/1573194546388_l5c2-0.jpg",
@@ -142,95 +115,69 @@ export default {
 };
 </script>
 
-
 <style>
-.Classify-body .frist {
-  height: 0.4rem;
-  background: white;
+.recommend_list {
+  width: calc(100% - 0.4rem);
+  margin: 0 0.2rem;
+  overflow: hidden;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-shrink: 0;
+  min-height: 2rem;
 }
-.Classify-body .frist span {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.Classify-body .frist span:nth-of-type(1),
-.Classify-body .frist span:nth-of-type(3) {
-  width: 0.4rem;
-  color: #ff3a56;
-  font-size: 0.18rem;
-}
-.Classify-body .frist span:nth-of-type(2) {
-  flex: 1;
-  color: black;
-  font-size: 0.17rem;
-}
-.Classify-body .header {
+.recommend_list li {
   flex-shrink: 0;
-  height: 0.45rem;
-  border-bottom: 1px solid #ccc;
+  margin-right: 0.08rem;
   display: flex;
-  justify-content: space-around;
-}
-.Classify-body .header span {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 0.14rem !important;
-  color: #999ea3;
-}
-.Classify-body .header span i {
-  font-size: 0.1rem;
-  color: #ff3a56;
-  margin-left: 0.05rem;
-  font-style: normal;
-}
-.Classify-body .main {
-  flex: 1;
-  min-height: 5rem;
-  overflow-y: auto;
-  flex-shrink: 0;
-  margin-bottom: 0.5rem;
-}
-.Classify-body .mainbox {
-  margin: 0.2rem;
-  display: flex;
-  flex-shrink: 0;
-}
-.Classify-body .main img {
-  flex-shrink: 0;
-  width: 0.85rem;
-  height: 1.13rem;
-}
-.Classify-body .right {
-  margin-left: 0.2rem;
-  width: 1.6rem;
-  display: flex;
+  width: 0.9rem;
   flex-direction: column;
+  align-items: center;
   font-size: 0.14rem;
+  font-weight: 400;
+  overflow: hidden;
+  margin-bottom: 0.12rem;
 }
-.Classify-body .right .name {
-  font-size: 0.14rem;
+.mt5 {
+  margin-top: 0.05rem;
+}
+.recommend_list .imgs {
+  width: 100%;
+  height: 1.2rem;
+  border-radius: 0.1rem;
+  display: block;
+}
+.db {
+  display: block;
+}
+.gray9 {
+  color: #999;
+  font-weight: 400;
+}
+.gray5 {
+  color: #b5bbc1;
+}
+.f11 {
+  font-size: 0.11rem;
+}
+.f10 {
+  font-size: 0.1rem;
+}
+.recommend_list li .name {
   color: #333;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  height: 0.4rem;
-  line-height: 0.2rem;
+  font-size: 0.13rem;
+  height: 0.34rem;
+  line-height: 0.18rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.Classify-body .right span {
-  display: block;
-  color: #999ea3;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 0.12rem;
+.red {
+  color: #ff3a56;
 }
-.span1 {
-  margin-top: 0.1rem;
+.f13 {
+  font-size: 0.13rem;
 }
 </style>
