@@ -25,7 +25,7 @@ export default {
   left: 0;
   z-index: -1;
 }
-.head-tit {
+.goodslist-body .head-tit {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -35,7 +35,7 @@ export default {
   font-weight: bold;
   flex-shrink: 0;
 }
-.head-tit .goback {
+.goodslist-body .head-tit .goback {
   left: 0.15rem;
   width: 0.18rem;
   height: 0.18rem;
@@ -44,13 +44,13 @@ export default {
   display: block;
   top: 0.11rem;
 }
-.mt100 {
+.goodslist-body .mt100 {
   margin-top: 1rem;
 }
-.tc {
+.goodslist-body .tc {
   text-align: center;
 }
-.unOrder i {
+.goodslist-body .unOrder i {
   display: inline-block;
   width: 1.45rem;
   height: 1.06rem;
@@ -58,10 +58,10 @@ export default {
   background-position: 0 -1.81rem;
   flex-shrink: 0;
 }
-.red {
+.goodslist-body .red {
   color: #ff3a56;
 }
-.f14 {
+.goodslist-body .f14 {
   font-size: 0.14rem;
 }
 .goodslist-body .icon-dengji- {

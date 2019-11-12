@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 #footer {
   display: flex;
   height: 0.5rem;
@@ -52,7 +52,7 @@ export default {
   box-shadow: 0px 0px 8px 0px rgba(95, 100, 106, 0.15);
   flex-shrink: 0;
 }
-.service {
+#footer .service {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -63,12 +63,12 @@ export default {
   flex-shrink: 0;
   padding-top: 0.07rem;
 }
-.iconfont {
+#footer .iconfont {
   display: flex;
   font-size: 0.25rem;
   flex-shrink: 0;
 }
-.router-link-active {
+#footer .router-link-active {
   color: #ff2959;
 }
 </style>

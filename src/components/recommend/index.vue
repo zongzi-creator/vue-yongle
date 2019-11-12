@@ -2,7 +2,7 @@
   <div>
     <ul class="recommend_list">
       <router-link
-      :to="'/detail/'+item.id"
+        :to="'/detail/'+item.id"
         v-for="(item,index) in recommends"
         :key="index"
         tag="li"
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-        // +'/'+item.name+'/'+item.price+'/'+item.time"
+// +'/'+item.name+'/'+item.price+'/'+item.time"
 
 export default {
   name: "Recommond",
@@ -138,7 +138,7 @@ export default {
   overflow: hidden;
   margin-bottom: 0.12rem;
 }
-.mt5 {
+.recommend_list .mt5 {
   margin-top: 0.05rem;
 }
 .recommend_list .imgs {
@@ -147,20 +147,20 @@ export default {
   border-radius: 0.1rem;
   display: block;
 }
-.db {
+.recommend_list .db {
   display: block;
 }
-.gray9 {
+.recommend_list .gray9 {
   color: #999;
   font-weight: 400;
 }
-.gray5 {
+.recommend_list .gray5 {
   color: #b5bbc1;
 }
-.f11 {
+.recommend_list .f11 {
   font-size: 0.11rem;
 }
-.f10 {
+.recommend_list .f10 {
   font-size: 0.1rem;
 }
 .recommend_list li .name {
@@ -174,10 +174,10 @@ export default {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.red {
+.recommend_list .red {
   color: #ff3a56;
 }
-.f13 {
+.recommend_list .f13 {
   font-size: 0.13rem;
 }
 </style>
