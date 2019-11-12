@@ -4,7 +4,7 @@
       <router-link to="/home" tag="i" class="iconfont icon-fanhui"></router-link>
       <div class="headtou"></div>
       <b class="iconfont icon-kefu"></b>
-      <em class="iconfont icon-shezhi"></em>
+      <router-link to="/setting" tag="em" class="iconfont icon-shezhi"></router-link>
     </div>
     <p class="p">S****5</p>
     <main>

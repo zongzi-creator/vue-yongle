@@ -68,7 +68,7 @@ export default {
   font-size: 0.25rem;
   flex-shrink: 0;
 }
-.router-link-active {
+#footer .router-link-active {
   color: #ff2959;
 }
 </style>

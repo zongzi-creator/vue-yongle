@@ -10,6 +10,7 @@ import City from "../pages/city";
 import Detail from "../pages/detail";
 import Goodslist from "../pages/goodslist";
 import Love from "../pages/love"
+import Setting from "../pages/setting"
 Vue.use(VueRouter);
 
 //路由的配置
@@ -86,6 +87,13 @@ const router = new VueRouter({
     {
       path: "/love",
       component: Love,
+      meta: {
+        tabFlag: false
+      }
+    },
+    {
+      path: "/setting",
+      component: Setting,
       meta: {
         tabFlag: false
       }
