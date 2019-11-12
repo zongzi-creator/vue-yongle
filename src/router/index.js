@@ -30,6 +30,7 @@ const router = new VueRouter({
           path: "recommend",
           component: Recommend,
           meta: {
+            title:"",
             tabFlag: true
           }
         },
@@ -37,6 +38,7 @@ const router = new VueRouter({
           path: "site",
           component: Site,
           meta: {
+            title:"",
             tabFlag: true
           }
         }
@@ -46,6 +48,7 @@ const router = new VueRouter({
       path: "/classify",
       component: Classify,
       meta: {
+        title:"分类",
         tabFlag: true
       }
     },
@@ -53,6 +56,7 @@ const router = new VueRouter({
       path: "/search",
       component: Search,
       meta: {
+        title:"搜索",
         tabFlag: true
       }
     },
@@ -60,6 +64,7 @@ const router = new VueRouter({
       path: "/mine",
       component: Mine,
       meta: {
+        title:"我的",
         tabFlag: true
       }
     },
@@ -95,6 +100,7 @@ const router = new VueRouter({
       path: "/setting",
       component: Setting,
       meta: {
+        title:"设置",
         tabFlag: false
       }
     },
