@@ -143,6 +143,7 @@ export default {
 .Setting-body footer button {
   width: 100%;
   height: 0.45rem;
+  font-size:.2rem;
   border-radius: 1rem;
   outline: none;
   border: none;

@@ -117,7 +117,7 @@ export default {
   height:100%;
   overflow-y: auto;
   flex-shrink: 0;
-  padding-bottom: 1.3rem;
+  padding-bottom: 2rem;
 }
 .Mine-body .bottom {
   width: 100%;

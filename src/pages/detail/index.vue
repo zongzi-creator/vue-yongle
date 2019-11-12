@@ -321,7 +321,8 @@ em {
   color: #ff7e6f;
 }
 .detail-body footer button {
-  flex: 1;
+  width:2.3rem;
+  font-size: .2rem;
   height: 0.45rem;
   border-radius: 1rem;
   outline: none;
