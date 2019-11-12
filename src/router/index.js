@@ -11,6 +11,7 @@ import Detail from "../pages/detail";
 import Goodslist from "../pages/goodslist";
 import Love from "../pages/love"
 import Setting from "../pages/setting"
+import SetAdress from "../pages/setAdress"
 Vue.use(VueRouter);
 
 //路由的配置
@@ -94,6 +95,13 @@ const router = new VueRouter({
     {
       path: "/setting",
       component: Setting,
+      meta: {
+        tabFlag: false
+      }
+    },
+    {
+      path: "/setAdress",
+      component: SetAdress,
       meta: {
         tabFlag: false
       }

@@ -31,7 +31,7 @@
         </router-link>
       </div>
       <div class="registerone">
-        <router-link to="#" tag="span">
+        <router-link to="/setAdress" tag="span">
           <i class="iconfont icon-dizhiguanli"></i>收货地址
         </router-link>
         <router-link to="/love" tag="span">
