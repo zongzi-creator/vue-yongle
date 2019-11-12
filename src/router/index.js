@@ -74,7 +74,7 @@ const router = new VueRouter({
       path: "/detail/:id",
       component: Detail,
       meta: {
-        tabFlag:true
+        tabFlag:false
       }
     },
     {

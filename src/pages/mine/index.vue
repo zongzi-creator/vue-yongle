@@ -114,9 +114,10 @@ export default {
   text-align: center;
 }
 .Mine-body main {
-  flex: 1;
+  height:100%;
   overflow-y: auto;
   flex-shrink: 0;
+  padding-bottom: 1.3rem;
 }
 .Mine-body .bottom {
   width: 100%;
@@ -127,7 +128,7 @@ export default {
 }
 .Mine-body .bottom span {
   display: flex;
-  flex: 1;
+  width:30%;
   font-size: 0.12rem;
   flex-direction: column;
   justify-content: center;

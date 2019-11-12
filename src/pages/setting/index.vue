@@ -135,7 +135,7 @@ export default {
   color: #ff2959;
 }
 .Setting-body footer {
-  height: 0.55rem;
+  height: 0.5rem;
   display: flex;
   align-items: center;
   box-shadow: 0px 2px 6px 0px rgba(255, 37, 68, 0.2);

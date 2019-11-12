@@ -1,5 +1,5 @@
 <template>
-  <div id="body" class="auto">
+  <div id="body" class="detail-body">
     <div class="bodybg"></div>
     <div class="detailHeader head" :id="id">
       <div class="head-bg">
@@ -54,6 +54,10 @@
       </div>
       <Footer />
     </div>
+    <footer>
+      <router-link tag="a" to="#" class="iconfont icon-kefu"></router-link>
+      <router-link tag="button" to="/goodslist" >立即预定</router-link>
+    </footer>
   </div>
 </template>
 
@@ -79,8 +83,8 @@ export default {
 
 
 <style>
-.auto{
-  overflow-y:auto !important;
+.detail-body {
+  overflow-y: auto !important;
 }
 .bodybg {
   background: #f5f6f7;
@@ -291,5 +295,39 @@ em {
   letter-spacing: 0.02rem;
   font-size: 0.14rem;
   color: #7b8187;
+}
+.detail-body footer {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  left:0;
+  bottom: 0;
+  height: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px 6px 0px rgba(255, 37, 68, 0.2);
+}
+.detail-body footer .icon-kefu{
+  display: block;
+  margin-left:.15rem;
+  height: 0.45rem;
+  border-radius:50%;
+  border:1px solid #ece8e9;
+  text-align: center;
+  line-height: 0.45rem;
+  width:.45rem;
+  font-size:.3rem;
+  color: #ff7e6f;
+}
+.detail-body footer button {
+  flex: 1;
+  height: 0.45rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  background: linear-gradient(to right, #ff7e6f, #ff2959);
+  color: white;
+  margin: 0 0.15rem;
 }
 </style>

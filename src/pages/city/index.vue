@@ -1,5 +1,5 @@
 <template>
-  <div id="City-body">
+  <div id="body" class="city-body">
     <div id="city-tit">
       <router-link to="/home" class="goback iconfont icon-fanhui"></router-link>选择演出城市
     </div>
@@ -45,6 +45,7 @@
         <span data-id="liaocheng">聊城</span>
         <span data-id="nc">南昌</span>
         <span data-id="nn">南宁</span>
+        <span data-id="zz">治州</span>
         <span data-id="qd">青岛</span>
         <span data-id="qz">泉州</span>
         <span data-id="riben">日本</span>
@@ -75,12 +76,18 @@ export default {
 };
 </script>
 <style>
+.city-body {
+  overflow-y: auto;
+}
 #city-tit {
-  height: 0.4rem;
-  line-height: 0.4rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
   width: 100%;
   flex-shrink: 0;
   font-size: 0.17rem;
+  position: fixed;
+  z-index: 1;
+  background: #fff;
 }
 .goback {
   font-size: 0.17rem;
@@ -91,12 +98,14 @@ export default {
   color: #ff2959;
 }
 #City-body .main {
-  flex: 1;
+  height: 100%;
   flex-shrink: 0;
   overflow-y: auto;
+  padding-bottom: 0.5rem;
+  padding-top: 0.48rem;
 }
 .position-city {
-  margin-top: 0.3rem;
+  margin-top: 0.7rem;
   margin-left: 0.2rem;
   font-size: 0.13rem;
   color: #999;

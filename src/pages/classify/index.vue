@@ -162,7 +162,7 @@ export default {
   font-size: 0.18rem;
 }
 .Classify-body .frist span:nth-of-type(2) {
-  flex: 1;
+  width:2.4rem;
   color: black;
   font-size: 0.17rem;
 }
@@ -187,11 +187,10 @@ export default {
   font-style: normal;
 }
 .Classify-body .main {
-  flex: 1;
-  min-height: 5rem;
+  height: 100%;
   overflow-y: auto;
   flex-shrink: 0;
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.6rem;
 }
 .Classify-body .mainbox {
   margin: 0.2rem;

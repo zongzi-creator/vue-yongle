@@ -129,7 +129,7 @@ export default {
   font-size: 0.07rem;
 }
 #home-head .search {
-  flex: 1;
+  height: 2.45rem;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -173,12 +173,12 @@ export default {
 /* 主题部分 */
 #home-main {
   display: flex;
-  flex: 1;
+  height:100%;
   flex-shrink: 0;
-  min-height: 3rem;
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
+  padding-bottom: 0.5rem;
 }
 #home-main #change {
   width: 100%;
@@ -207,10 +207,12 @@ export default {
 .title-nav p {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .title-nav p a {
-  flex: 1;
+  width:25%;
   font-size: 0.12rem;
   text-align: center;
   color: rgb(123, 129, 135);

@@ -44,10 +44,10 @@ export default {
 .Search-body header span {
   text-align: center;
   line-height: 0.4rem;
-  flex: 1;
+  width:2.22rem;
 }
 .Search-body main {
-  flex: 1;
+  height:100%;
 }
 .Search-body .head {
   display: flex;
@@ -57,7 +57,8 @@ export default {
   margin-top: 0.04rem;
 }
 .Search-body .head input {
-  flex: 1;
+  width:2.32rem;
+  height:0.34rem;
   border-radius: 1rem;
   padding: 0 0.3rem;
   background: #f3f4f5;

@@ -51,7 +51,7 @@ export default {};
 .tc {
   text-align: center;
 }
-.love-body  .unOrder i {
+.love-body .unOrder i {
   display: inline-block;
   width: 1.45rem;
   height: 1.06rem;
@@ -70,24 +70,24 @@ export default {};
   color: #ff7e6f;
 }
 .disabled-loveBtn {
- margin: 2rem auto;
+  margin: 2rem auto;
   font-weight: 400;
   text-align: center;
 }
 
 .btns {
   display: flex;
-  width:.8rem;
+  width: 0.8rem;
 }
 .btns .min-btn {
-  flex: 1;
+  width: 0.8rem;
   display: flex;
   justify-content: center;
   height: 0.4rem;
   line-height: 0.4rem;
   text-align: center;
   border-radius: 1rem;
-  font-size:.02rem;
+  font-size: 0.02rem;
 }
 .btns a {
   margin: 0.08rem 0.08rem 0.08rem 0;
