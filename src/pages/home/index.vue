@@ -62,7 +62,7 @@
       <!-- 渲染内容 -->
       <router-view></router-view>
       <!-- 底部 -->
-      <Footer/>
+      <Footer />
     </div>
   </div>
 </template>
@@ -71,7 +71,7 @@
 import Slider from "../../components/slider";
 import Recommend from "../../components/recommend";
 import Site from "../../components/site";
-import Footer from "../../components/footer"
+import Footer from "../../components/footer";
 export default {
   name: "Home",
   components: {
@@ -80,10 +80,9 @@ export default {
     Site,
     Footer
   },
-  created(){
-    console.log(this)
+  created() {
+    document.title = this.$route.meta.title;
   }
-
 };
 </script>
 
@@ -174,7 +173,7 @@ export default {
 /* 主题部分 */
 .home-body #home-main {
   display: flex;
-  height:100%;
+  height: 100%;
   flex-shrink: 0;
   flex-direction: column;
   overflow-x: hidden;
@@ -208,16 +207,16 @@ export default {
 .home-body .title-nav p {
   display: flex;
   flex-wrap: wrap;
-  align-items:space-between;
+  align-items: space-between;
   flex-shrink: 0;
 }
 
 .home-body .title-nav p a {
-  width:25%;
+  width: 25%;
   font-size: 0.12rem;
   text-align: center;
   color: rgb(123, 129, 135);
-  padding-bottom:0.1rem;
+  padding-bottom: 0.1rem;
 }
 
 .home-body .title-nav p a i {
@@ -244,5 +243,4 @@ export default {
   height: 100%;
   background: rgba(210, 194, 1, 0.3);
 }
-
 </style>

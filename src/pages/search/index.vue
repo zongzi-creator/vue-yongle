@@ -22,6 +22,9 @@ export default {
   name: "Search",
   components: {
     Footer
+  },
+  created() {
+    document.title = this.$route.meta.title;
   }
 };
 </script>
@@ -44,10 +47,10 @@ export default {
 .Search-body header span {
   text-align: center;
   line-height: 0.4rem;
-  width:2.22rem;
+  width: 2.22rem;
 }
 .Search-body main {
-  height:100%;
+  height: 100%;
 }
 .Search-body .head {
   display: flex;
@@ -57,9 +60,9 @@ export default {
   margin-top: 0.04rem;
 }
 .Search-body .head input {
-  width:2.32rem;
-  height:0.34rem;
-  font-size:.1rem;
+  width: 2.32rem;
+  height: 0.34rem;
+  font-size: 0.1rem;
   border-radius: 1rem;
   padding: 0 0.3rem;
   background: #f3f4f5;

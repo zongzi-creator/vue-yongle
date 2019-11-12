@@ -41,7 +41,10 @@
 </template>
 <script>
 export default {
-  name: "Setting"
+  name: "Setting",
+  created(){
+      document.title=this.$route.meta.title
+  }
 };
 </script>
 <style >

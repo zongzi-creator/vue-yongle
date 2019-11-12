@@ -47,6 +47,9 @@
 import Footer from "../../components/footer";
 export default {
   name: "Classify",
+  created(){
+      document.title=this.$route.meta.title
+  },
   components: {
     Footer
   },
