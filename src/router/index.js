@@ -30,7 +30,7 @@ const router = new VueRouter({
           path: "recommend",
           component: Recommend,
           meta: {
-            title:"",
+            title:"首页",
             tabFlag: true
           }
         },
