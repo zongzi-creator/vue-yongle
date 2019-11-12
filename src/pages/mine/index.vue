@@ -72,7 +72,8 @@ export default {
 .Mine-body .head {
   width: 100%;
   height: 2.23rem;
-  background: url("https://m2static.228.cn/images/head-poho-bg.jpg") no-repeat center;
+  background: url("https://m2static.228.cn/images/head-poho-bg.jpg") no-repeat
+    center;
   position: relative;
   flex-shrink: 0;
 }
@@ -138,7 +139,6 @@ export default {
   justify-content: space-around;
   border-bottom: 1px solid rgb(226, 220, 220);
   flex-shrink: 0;
-
   align-items: center;
 }
 .Mine-body .dingdan span {
@@ -150,6 +150,7 @@ export default {
 }
 .Mine-body .dingdan span i {
   color: rgb(248, 23, 23);
+  font-size: 0.25rem;
 }
 .Mine-body .registerone,
 .Mine-body .registertwo {
@@ -175,5 +176,6 @@ export default {
 .Mine-body .registertwo span i,
 .Mine-body .registerthree span i {
   color: rgb(43, 216, 216);
+  font-size: 0.25rem;
 }
 </style>
