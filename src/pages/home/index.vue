@@ -220,6 +220,7 @@ export default {
   display: block;
   height: 0.36rem;
   width: 0.36rem;
+  font-size: 0.25rem;
   margin: auto;
   color: #ff3a56;
 }
