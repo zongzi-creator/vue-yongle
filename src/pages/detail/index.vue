@@ -11,7 +11,7 @@
 
       <div class="head-icon">
         <router-link to="/" class="iconfont icon-fanhui gobacks"></router-link>
-        <a href="#" class="iconfont icon-xihuan love"></a>
+        <router-link to="/love" class="iconfont icon-xihuan love"></router-link>
         <a href="#" class="iconfont icon-fenxiang share"></a>
       </div>
 
