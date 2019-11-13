@@ -59,6 +59,7 @@ export default {
 .Search-body .head input {
   width:2.32rem;
   height:0.34rem;
+  font-size:.1rem;
   border-radius: 1rem;
   padding: 0 0.3rem;
   background: #f3f4f5;

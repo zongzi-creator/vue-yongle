@@ -1,5 +1,5 @@
 <template>
-  <div id="body">
+  <div id="body" class="home-body">
     <div id="home-head">
       <router-link to="/city" class="city">
         <span>全国</span>
@@ -90,7 +90,8 @@ export default {
 
 <style>
 /* 头部组件 */
-#home-head {
+
+.home-body #home-head {
   padding: 0.04rem 0.15rem 0.04rem 0.1rem;
   display: flex;
   height: 0.48rem;
@@ -99,7 +100,7 @@ export default {
   background: linear-gradient(to right, #ff7e6f, #ff2959);
   box-shadow: 0px 2px 6px 0px rgba(255, 37, 68, 0.2);
 }
-#home-head .city {
+.home-body #home-head .city {
   display: flex;
   justify-content: space-around;
   width: 0.5rem;
@@ -116,7 +117,7 @@ export default {
   position: relative;
 }
 
-#home-head .city i {
+.home-body #home-head .city i {
   position: absolute;
   right: 0.1rem;
   display: block;
@@ -124,11 +125,11 @@ export default {
   height: 0.05rem;
   background-size: cover;
 }
-.icon-xiasanjiaoxing {
+.home-body .icon-xiasanjiaoxing {
   color: #fff;
   font-size: 0.07rem;
 }
-#home-head .search {
+.home-body #home-head .search {
   height: 2.45rem;
   display: flex;
   justify-content: center;
@@ -141,7 +142,7 @@ export default {
   overflow: hidden;
   position: relative;
 }
-#home-head .search input {
+.home-body #home-head .search input {
   height: 0.34rem;
   line-height: 0.34rem;
   font-size: 0.13rem;
@@ -154,7 +155,7 @@ export default {
   caret-color: #ff3a56;
   color: slategrey;
 }
-#home-head .search i {
+.home-body #home-head .search i {
   width: 0.14rem;
   height: 0.14rem;
   line-height: 0.14rem;
@@ -166,12 +167,12 @@ export default {
   z-index: 1;
   left: calc(100% / 2 - 15px);
 }
-.icon-sousuo {
+.home-body .icon-sousuo {
   color: #ff2959;
   font-size: 0.07rem;
 }
 /* 主题部分 */
-#home-main {
+.home-body #home-main {
   display: flex;
   height:100%;
   flex-shrink: 0;
@@ -180,7 +181,7 @@ export default {
   overflow-y: auto;
   padding-bottom: 0.5rem;
 }
-#home-main #change {
+.home-body #home-main #change {
   width: 100%;
   flex-shrink: 0;
   font-size: 0.22rem;
@@ -192,42 +193,43 @@ export default {
   padding-top: 0.1rem;
   overflow: hidden;
 }
-#home-main #change b {
+.home-body #home-main #change b {
   color: #b5bbc1;
   margin-right: 0.1rem;
 }
-#home-main #change .router-link-exact-active {
+.home-body #home-main #change .router-link-exact-active {
   color: #000 !important;
 }
 /* 侧导航栏 */
-.title-nav {
+.home-body .title-nav {
   margin: 0.25rem 0.2rem;
 }
 
-.title-nav p {
+.home-body .title-nav p {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items:space-between;
   flex-shrink: 0;
 }
 
-.title-nav p a {
+.home-body .title-nav p a {
   width:25%;
   font-size: 0.12rem;
   text-align: center;
   color: rgb(123, 129, 135);
+  padding-bottom:0.1rem;
 }
 
-.title-nav p a i {
+.home-body .title-nav p a i {
   display: block;
   height: 0.36rem;
   width: 0.36rem;
-  font-size: 0.25rem;
+  font-size: 0.3rem;
   margin: auto;
   color: #ff3a56;
 }
 /* 先抢先付*/
-.first-pay-first {
+.home-body .first-pay-first {
   display: flex;
   flex-shrink: 0;
   width: 2.8rem;
@@ -237,7 +239,7 @@ export default {
   overflow: hidden;
   background: #ff2959;
 }
-.first-pay-first img {
+.home-body .first-pay-first img {
   width: 100%;
   height: 100%;
   background: rgba(210, 194, 1, 0.3);
