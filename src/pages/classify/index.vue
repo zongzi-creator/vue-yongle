@@ -21,20 +21,18 @@
     </div>
     <div class="main">
       <router-link
-        :to="'/detail/'+item.id"
+        to="/detail"
         class="mainbox"
-        v-for="(item,index) in content"
-        :key="index"
-        :id="item.id"
         tag="div"
+        v-for="(item,index) in resu" :key="index"
       >
-        <img :src="item.urlPic" />
+        <img src="" />
         <div class="right">
           <b class="name">{{item.name}}</b>
-          <span class="span1">{{item.time}}</span>
-          <span class=".span2">凯迪拉克中心</span>
+          <span class="span1">{{}}</span>
+          <span class=".span2"></span>
           <span class="span1">
-            <b class="red f14 mr5">{{item.price}}</b>
+            <b class="red f14 mr5">{{}}</b>
           </span>
         </div>
       </router-link>
@@ -45,6 +43,7 @@
 </template>
 <script>
 import Footer from "../../components/footer";
+import {classify} from "../../api/myadress"
 export default {
   name: "Classify",
   created(){
@@ -53,95 +52,116 @@ export default {
   components: {
     Footer
   },
-  data() {
-    return {
-      icfont: "iconfont",
-      html: "&#xe642;",
-      content: [
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/11/08/AfterTreatment/1573194546388_l5c2-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1001"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/10/31/AfterTreatment/1572504279871_i2c3-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1002"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/10/11/AfterTreatment/1570771698088_f0v3-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1003"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/09/23/AfterTreatment/1569225507050_q5p0-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1004"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/08/15/AfterTreatment/1565855746142_p0k7-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1005"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/07/05/AfterTreatment/1562319676003_k8k6-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1006"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/09/05/AfterTreatment/1567647872834_g8j5-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1007"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/06/18/AfterTreatment/1560838266418_p7n8-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1008"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/10/15/AfterTreatment/1571125267793_q2k9-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1009"
-        }
-      ]
-    };
+  async created(){
+    let data=await classify(10,20);
+    console.log(data.data.pagerMemory)
+    this.render(data.data.pagerMemory);
+  },
+  data(){
+    return{
+        resu:[]
+    }
+  },
+  methods:{
+    render(data){
+      for(let i=0;i<data.previousPage.length;i++){
+          this.resu.push(data.previousPage[i])
+      } 
+
+
+
+
+    }
   }
+  // data() {
+  //   return {
+  //     icfont: "iconfont",
+  //     html: "&#xe642;",
+  //     content: [
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/11/08/AfterTreatment/1573194546388_l5c2-0.jpg",
+  //         name:
+  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
+  //         time: "2019.11.17",
+  //         price: "￥22.8",
+  //         id: "1001"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/10/31/AfterTreatment/1572504279871_i2c3-0.jpg",
+  //         name:
+  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
+  //         time: "2019.12.14",
+  //         price: "￥380",
+  //         id: "1002"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/10/11/AfterTreatment/1570771698088_f0v3-0.jpg",
+  //         name:
+  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
+  //         time: "2019.11.17",
+  //         price: "￥22.8",
+  //         id: "1003"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/09/23/AfterTreatment/1569225507050_q5p0-0.jpg",
+  //         name:
+  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
+  //         time: "2019.12.14",
+  //         price: "￥380",
+  //         id: "1004"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/08/15/AfterTreatment/1565855746142_p0k7-0.jpg",
+  //         name:
+  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
+  //         time: "2019.11.17",
+  //         price: "￥22.8",
+  //         id: "1005"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/07/05/AfterTreatment/1562319676003_k8k6-0.jpg",
+  //         name:
+  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
+  //         time: "2019.12.14",
+  //         price: "￥380",
+  //         id: "1006"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/09/05/AfterTreatment/1567647872834_g8j5-0.jpg",
+  //         name:
+  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
+  //         time: "2019.11.17",
+  //         price: "￥22.8",
+  //         id: "1007"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/06/18/AfterTreatment/1560838266418_p7n8-0.jpg",
+  //         name:
+  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
+  //         time: "2019.12.14",
+  //         price: "￥380",
+  //         id: "1008"
+  //       },
+  //       {
+  //         urlPic:
+  //           "https://static.228.cn/upload/2019/10/15/AfterTreatment/1571125267793_q2k9-0.jpg",
+  //         name:
+  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
+  //         time: "2019.11.17",
+  //         price: "￥22.8",
+  //         id: "1009"
+  //       }
+  //     ]
+  //   };
+  // }
 };
 </script>
 

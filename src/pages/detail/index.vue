@@ -330,5 +330,6 @@ em {
   background: linear-gradient(to right, #ff7e6f, #ff2959);
   color: white;
   margin: 0 0.15rem;
+  font-size:.15rem
 }
 </style>
