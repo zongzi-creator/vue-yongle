@@ -45,10 +45,15 @@
 </template>
 <script>
 import Footer from "../../components/footer";
+import {classify} from "../../api/myadress"
 export default {
   name: "Classify",
   components: {
     Footer
+  },
+  async created(){
+    let data=await classify(10);
+    console.log(data)
   },
   data() {
     return {

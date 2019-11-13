@@ -144,6 +144,7 @@ export default {
   width: 100%;
   height: 0.45rem;
   border-radius: 1rem;
+  font-size:.15rem;
   outline: none;
   border: none;
   background: linear-gradient(to right, #ff7e6f, #ff2959);

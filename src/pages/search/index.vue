@@ -68,7 +68,7 @@ export default {
 }
 .Search-body .head a {
   line-height: 0.34rem;
-  font-size: 0.15rem;
+  font-size: 0.13rem;
 }
 .Search-body .head i {
   color: #ff2959;
