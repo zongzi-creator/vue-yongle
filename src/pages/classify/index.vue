@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="Classify-body">
     <div class="frist">
-      <router-link to="#" tag="span" class="iconfont icon-fanhui"></router-link>
+      <v-touch @tap="goback()" tag="span" class="iconfont icon-fanhui"></v-touch>
       <span>分类</span>
       <router-link to="/search" tag="span" class="iconfont icon-sousuo"></router-link>
     </div>
@@ -29,15 +29,16 @@
       >
         <div class="left">
           <img :src="'//static.228.cn'+item.pbigimg" />
-          <i class="ticket-state-blue tip tip-grabSeat">预订</i>
+          <!-- <i class="ticket-state-blue tip tip-grabSeat">预订</i> -->
         </div>
         <div class="right">
           <b class="name">{{item.name}}</b>
           <span class="span1">{{item.begindate}} ～ {{item.enddate}}</span>
           <span class=".span2">{{item.vname}}</span>
           <span class="span1">
-            <b class="red f14 mr5">{{item.minprice}} - {{item.maxprice}}元</b>
+            <b class="red f14 mr5">￥{{item.minprice}}-{{item.maxprice}}</b>
           </span>
+
         </div>
       </router-link>
       <button class="more" @click="handleClassify()">查看更多</button>
@@ -70,9 +71,12 @@ export default {
       this.render(data.data.pagerMemoryList);
     },
     render(data) {
-      for (let i = 0; i < data.length; i++) {
+      for       (let i = 0; i < data.length; i++) {
         this.resu.push(data[i]);
       }
+    },
+    goback(){
+      this.$router.back();
     }
   }
 };

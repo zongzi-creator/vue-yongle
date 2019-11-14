@@ -8,6 +8,7 @@ import Recommend from "../components/recommend";
 import Site from "../components/site";
 import City from "../pages/city";
 import Detail from "../pages/detail";
+import Vdetail from "../pages/Vdetail";
 import Goodslist from "../pages/goodslist";
 import Love from "../pages/love"
 import Setting from "../pages/setting"
@@ -79,6 +80,13 @@ const router = new VueRouter({
     {
       path: "/detail/:id",
       component: Detail,
+      meta: {
+        tabFlag:false
+      }
+    },
+    {
+      path: "/Vdetail/:id",
+      component: Vdetail,
       meta: {
         tabFlag:false
       }
