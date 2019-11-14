@@ -2,17 +2,17 @@
   <div>
     <ul class="recommend_list">
       <router-link
-        :to="'/detail/'+item.id"
+        :to="'/detail/'+item.PRODUCTID"
         v-for="(item,index) in recommends"
         :key="index"
         tag="li"
       >
         <a href="#">
-          <img :src="item.urlPic" class="imgs" />
-          <b class="db mt5 name">{{item.name}}</b>
+          <img :src="'//static.228.cn'+item.PBIGIMG" class="imgs" />
+          <b class="db mt5 name">{{item.NAME}}</b>
           <span class="gray9 db f11">{{item.time}}</span>
           <span class="gray5 db f10">
-            <b class="red mr5 f13">{{item.price}}</b>起
+            <b class="red mr5 f13">{{item.MINPRICE}}</b>起
           </span>
         </a>
       </router-link>
@@ -21,96 +21,24 @@
 </template>
 
 <script>
-// +'/'+item.name+'/'+item.price+'/'+item.time"
-
+import { recommend } from "../../api/myadress";
 export default {
   name: "Recommond",
   data() {
     return {
-      recommends: [
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/11/08/AfterTreatment/1573194546388_l5c2-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1001"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/10/31/AfterTreatment/1572504279871_i2c3-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1002"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/10/11/AfterTreatment/1570771698088_f0v3-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1003"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/09/23/AfterTreatment/1569225507050_q5p0-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1004"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/08/15/AfterTreatment/1565855746142_p0k7-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1005"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/07/05/AfterTreatment/1562319676003_k8k6-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1006"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/09/05/AfterTreatment/1567647872834_g8j5-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1007"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/06/18/AfterTreatment/1560838266418_p7n8-0.jpg",
-          name:
-            "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-          time: "2019.12.14",
-          price: "￥380",
-          id: "1008"
-        },
-        {
-          urlPic:
-            "https://static.228.cn/upload/2019/10/15/AfterTreatment/1571125267793_q2k9-0.jpg",
-          name:
-            "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-          time: "2019.11.17",
-          price: "￥22.8",
-          id: "1009"
-        }
-      ]
+      recommends: []
     };
+  },
+  created() {
+    this.handleRecommend();
+    console.log(this);
+  },
+  methods: {
+    async handleRecommend() {
+      let data = await recommend();
+      console.log(data.data.recommendPage.list);
+      this.recommends = data.data.recommendPage.list;
+    }
   }
 };
 </script>

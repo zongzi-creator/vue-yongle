@@ -1,16 +1,19 @@
 <template>
   <div id="body" class="detail-body">
     <div class="bodybg"></div>
-    <div class="detailHeader head" :id="id">
+    <div class="detailHeader head">
       <div class="head-bg">
         <div class="bgImg">
-          <div class="bgImgBg"></div>
+          <div
+            class="bgImgBg"
+            :style="'background: url(//static.228.cn'+resu.PBIGIMG+')center center / 50% 3.9rem no-repeat;'"
+          ></div>
           <div class="bgImg-black"></div>
         </div>
       </div>
 
       <div class="head-icon">
-        <router-link to="/" class="iconfont icon-fanhui gobacks"></router-link>
+        <router-link to="/classify" class="iconfont icon-fanhui gobacks"></router-link>
         <router-link to="/love" class="iconfont icon-xihuan love"></router-link>
         <a href="#" class="iconfont icon-fenxiang share"></a>
       </div>
@@ -18,15 +21,11 @@
       <!---->
       <div class="head-con">
         <div class="left">
-          <img
-            src="//static.228.cn/upload/2019/11/08/AfterTreatment/1573194546388_l5c2-0.jpg"
-            onerror="this.src=&quot;//static.228.cn/resources/images/lazy_default.gif&quot;"
-            style="background: rgba(141, 49, 1, 0.3);"
-          />
-          <i id="statusDiv" class="tip gradual-red white">售票中</i>
+          <img :src="'//static.228.cn'+resu.PBIGIMG" style="background: rgba(141, 49, 1, 0.3);" />
+          <!-- <i id="statusDiv" class="tip gradual-red white">售票中</i> -->
         </div>
         <div class="right">
-          <h3 class="white">【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA</h3>
+          <h3 class="white">{{resu.NAME}}</h3>
           <div class="cl product-icon mt8">
             <span class="fl mr08 real-name-icon">
               <i></i>实名观演
@@ -35,7 +34,10 @@
           </div>
           <b class="price f14 mt30 db">
             <em class="f16">
-              <em class="f14">¥</em>22.8
+              <em class="f14">¥</em>
+              {{resu.MINPRICE}}-
+              <em class="f14">¥</em>
+              {{resu.MAXPRICE}}
             </em>
           </b>
         </div>
@@ -43,40 +45,52 @@
     </div>
 
     <div class="detailMain">
+      <div class="tips" v-html="resu.SPECIAL + resu.ROBTICKETTIPS"></div>
+
       <h3 class="con-tit mb15">
         <b>注意事项</b>
       </h3>
-      <div class="need-attention">
-        a)演出详情仅供参考，具体信息以现场为准；
-        <br />b)1.2米以下儿童谢绝入场，1.2米以上儿童需持票入场；
-        <br />c)演出票品具有唯一性、时效性等特殊属性，如非活动变更、活动取消、票品错误的原因外，不提供退换票品服务，购票时请务必仔细核对并审慎下单。
-        <br />d)需要开具发票的购票客户，请您在演出/活动开始5天前提供相关发票信息至在线客服，演出/活动结束后将统一由演出/活动主办单位开具增值税发票。
-      </div>
+      <div class="need-attention" v-html="resu.PRECAUTIONS"></div>
+      <div class="tips" v-html="resu.BUY_AFFICHE"></div>
+      <h3 class="con-tit mb15">
+        <b>演出详情</b>
+      </h3>
+      <div class="showDetails" v-html="resu.INTRODUCTION"></div>
       <Footer />
     </div>
     <footer>
       <router-link tag="a" to="#" class="iconfont icon-kefu"></router-link>
-      <router-link tag="button" to="/goodslist" >立即预定</router-link>
+      <router-link tag="button" to="/goodslist">立即预定</router-link>
     </footer>
+    <button class="more">查看更多</button>
   </div>
 </template>
 
 
 <script>
 import Footer from "../../components/footer";
+import { detail } from "../../api/myadress";
 export default {
   name: "Detail",
-  created() {
-    let { id } = this.$route.params;
-    this.id = id;
-  },
+
   data() {
     return {
-      id: ""
+      resu: []
     };
   },
   components: {
     Footer
+  },
+  created() {
+    var productid = this.$route.params.id;
+    this.handleDetail(productid);
+
+  },
+  methods: {
+    async handleDetail(productid) {
+      let data = await detail(productid);
+      this.resu = data.data.product;
+    }
   }
 };
 </script>
@@ -135,8 +149,6 @@ export default {
   left: 0;
   width: 100%;
   background-size: 200%;
-  background: url(//static.228.cn/upload/2019/11/08/AfterTreatment/1573194546388_l5c2-0.jpg)
-    center center / 50% 3.9rem no-repeat;
 }
 .head-bg .bgImg-black {
   width: 100%;
@@ -286,21 +298,28 @@ em {
 .mb15 {
   margin-bottom: 0.15rem;
 }
-.need-attention {
+.need-attention,
+.tips,
+.showDetails {
   border-radius: 0.05rem;
   background: #fff;
   font-weight: bold;
-  margin: 0 0.2rem;
+  margin: 0 0.2rem 0.2rem;
   line-height: 0.22rem;
   letter-spacing: 0.02rem;
   font-size: 0.14rem;
   color: #7b8187;
 }
+.showDetails img,
+.showDetails p img {
+  width: 100% !important;
+  height: auto;
+}
 .detail-body footer {
   position: fixed;
   width: 100%;
   background: #fff;
-  left:0;
+  left: 0;
   bottom: 0;
   height: 0.5rem;
   display: flex;
@@ -308,21 +327,21 @@ em {
   align-items: center;
   box-shadow: 0px 2px 6px 0px rgba(255, 37, 68, 0.2);
 }
-.detail-body footer .icon-kefu{
+.detail-body footer .icon-kefu {
   display: block;
-  margin-left:.15rem;
+  margin-left: 0.15rem;
   height: 0.45rem;
-  border-radius:50%;
-  border:1px solid #ece8e9;
+  border-radius: 50%;
+  border: 1px solid #ece8e9;
   text-align: center;
   line-height: 0.45rem;
-  width:.45rem;
-  font-size:.3rem;
+  width: 0.45rem;
+  font-size: 0.3rem;
   color: #ff7e6f;
 }
 .detail-body footer button {
-  width:2.3rem;
-  font-size: .2rem;
+  width: 2.3rem;
+  font-size: 0.2rem;
   height: 0.45rem;
   border-radius: 1rem;
   outline: none;
@@ -330,6 +349,6 @@ em {
   background: linear-gradient(to right, #ff7e6f, #ff2959);
   color: white;
   margin: 0 0.15rem;
-  font-size:.15rem
+  font-size: 0.15rem;
 }
 </style>

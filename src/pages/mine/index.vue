@@ -56,8 +56,8 @@
 <script>
 export default {
   name: "Mine",
-  created(){
-      document.title=this.$route.meta.title
+  created() {
+    document.title = this.$route.meta.title;
   }
 };
 </script>
@@ -117,7 +117,7 @@ export default {
   text-align: center;
 }
 .Mine-body main {
-  height:100%;
+  height: 100%;
   overflow-y: auto;
   flex-shrink: 0;
   padding-bottom: 2rem;
@@ -131,7 +131,7 @@ export default {
 }
 .Mine-body .bottom span {
   display: flex;
-  width:30%;
+  width: 30%;
   font-size: 0.12rem;
   flex-direction: column;
   justify-content: center;
