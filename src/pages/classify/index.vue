@@ -40,7 +40,7 @@
           </span>
         </div>
       </router-link>
-      <button class="more" @click="handleClassify(num)">查看更多</button>
+      <button class="more" @click="handleClassify()">查看更多</button>
       <!-- 底部 -->
       <Footer />
     </div>
@@ -65,7 +65,7 @@ export default {
     document.title = this.$route.meta.title;
   },
   methods: {
-    async handleClassify(num) {
+    async handleClassify() {
       let data = await classify(this.num++);
       this.render(data.data.pagerMemoryList);
     },

@@ -13,7 +13,7 @@
       </div>
 
       <div class="head-icon">
-        <router-link to="/classify" class="iconfont icon-fanhui gobacks"></router-link>
+        <v-touch @tap="goback()" tag="a" class="iconfont icon-fanhui gobacks"></v-touch>
         <router-link to="/love" class="iconfont icon-xihuan love"></router-link>
         <a href="#" class="iconfont icon-fenxiang share"></a>
       </div>
@@ -72,7 +72,6 @@ import Footer from "../../components/footer";
 import { detail } from "../../api/myadress";
 export default {
   name: "Detail",
-
   data() {
     return {
       resu: []
@@ -90,8 +89,13 @@ export default {
     async handleDetail(productid) {
       let data = await detail(productid);
       this.resu = data.data.product;
+    },
+    goback(){
+        this.$router.push("/search")
     }
-  }
+  },
+
+ 
 };
 </script>
 

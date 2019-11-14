@@ -47,3 +47,9 @@ export const site=(type,fcity,pageNum)=>http({
 });
 
 // https://m.228.cn/server/venue/143649.json
+
+export const search=(search)=>http({
+    method:"get",
+    url:'/server/search/s/'+search+'.json',
+  
+})
