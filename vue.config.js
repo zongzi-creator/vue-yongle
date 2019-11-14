@@ -10,6 +10,7 @@ module.exports = {
 
         }
         // https://m.228.cn/server/content/unionHead.json
+        // https://m.228.cn/server/search/moreSearch.json
     },
     //别名配置
     configureWebpack:{

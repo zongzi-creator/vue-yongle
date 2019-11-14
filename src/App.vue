@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <TabBar v-if="this.$route.meta.tabFlag"/>
+      <router-view></router-view>
+    <TabBar v-if="this.$route.meta.tabFlag" />
   </div>
 </template>
 
@@ -12,9 +12,6 @@ export default {
   name: "App",
   components: {
     TabBar
-  },
-  created(){
-      // console.log(this)
   }
 };
 </script>

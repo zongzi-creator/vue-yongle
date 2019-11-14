@@ -42,8 +42,8 @@
 <script>
 export default {
   name: "Setting",
-  created(){
-      document.title=this.$route.meta.title
+  created() {
+    document.title = this.$route.meta.title;
   }
 };
 </script>
@@ -146,9 +146,9 @@ export default {
 .Setting-body footer button {
   width: 100%;
   height: 0.45rem;
-  font-size:.2rem;
+  font-size: 0.2rem;
   border-radius: 1rem;
-  font-size:.15rem;
+  font-size: 0.15rem;
   outline: none;
   border: none;
   background: linear-gradient(to right, #ff7e6f, #ff2959);

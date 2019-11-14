@@ -1,10 +1,10 @@
 <template>
   <ul class="venue cl">
-    <li v-for="(item,index) in site" :key="index" :id="item.id">
+    <li v-for="(item,index) in site" :key="index" :id="item.VENUESID">
       <a href="#">
-        <img :src="item.urlPic" class="imgs" />
-        <b class="db mt5 name">{{item.name}}</b>
-        <span class="gray9 venue-address db f11">{{item.position}}</span>
+        <img :src="'//static.228.cn'+item.IMG" class="imgs" />
+        <b class="db mt5 name">{{item.VNAME}}</b>
+        <span class="gray9 venue-address db f11">{{item.ADDRESS}}</span>
       </a>
     </li>
   </ul>
@@ -12,83 +12,22 @@
 
 
 <script>
+import { site } from "../../api/myadress";
 export default {
   name: "Site",
   data() {
     return {
-      site: [
-        {
-          urlPic:
-            "http://static.228.cn/upload/2014/10/22/AfterTreatment/1413979266764_h4e0-0.jpg",
-          name: "工人体育馆",
-          position: "朝阳区三里屯工体北路",
-          id: "p1001"
-        },
-        {
-          urlPic:
-            "http://static.228.cn/upload/2017/06/22/AfterTreatment/1498115662271_q2h5-0.jpg",
-          name: "凯迪拉克中心",
-          position: "复兴路69号",
-          id: "p1002"
-        },
-        {
-          urlPic:
-            "http://static.228.cn/upload/2015/01/09/AfterTreatment/1420773063918_f8t7-0.jpg",
-          name: "国家大剧院",
-          position: "西城区西长安街2号（天安门西侧）",
-          id: "p1003"
-        },
-        {
-          urlPic:
-            "http://static.228.cn/upload/2013/12/30/AfterTreatment/1388349756378_v9r4-0.jpg",
-          name: "中国儿童中心",
-          position: "平安里西大街43号",
-          id: "p1004"
-        },
-        {
-          urlPic:
-            "http://static.228.cn//upload/2012/01/10/AfterTreatment/1201101527144581-0.jpg",
-          name: "东方艺术中心",
-          position: "浦东新区丁香路425号",
-          id: "p1005"
-        },
-        {
-          urlPic:
-            "http://static.228.cn//upload/2012/01/10/AfterTreatment/1201101535434388-0.jpg",
-          name: "上海大舞台（上海体育馆）",
-          position: "徐汇区漕溪北路1111号z",
-          id: "p1006"
-        },
-        {
-          urlPic:
-            "http://static.228.cn//upload/2011/09/30/AfterTreatment/xinghai1109301617307101-0.jpg",
-          name: "星海音乐厅",
-          position: "东山区二沙岛晴波路33号",
-          id: "p1007"
-        },
-        {
-          urlPic:
-            "http://static.228.cn/upload/2014/08/03/AfterTreatment/1407046567648_m3d6-0.jpg",
-          name: "广州大剧院",
-          position: "天河区珠江新城华夏路",
-          id: "p1008"
-        },
-        {
-          urlPic:
-            "http://static.228.cn//upload/2011/09/29/AfterTreatment/shenzhenyinyueting1109291148013535-0.jpg",
-          name: "深圳音乐厅",
-          position: "深圳福田区福中一路2016号",
-          id: "p1009"
-        },
-        {
-          urlPic:
-            "http://static.228.cn/upload/2012/04/25/AfterTreatment/1204251541343697-0.jpg",
-          name: "天津大剧院",
-          position: "天津市河西区越秀路天津文化中心天津大剧院（天津乐园原址）",
-          id: "p1010"
-        }
-      ]
+      site: []
     };
+  },
+  created() {
+    this.handleSite(1, 1, 1);
+  },
+  methods: {
+    async handleSite(type, fcity, pageNum) {
+      let data = await site(type, fcity, pageNum);
+      this.site = data.data.venuePage.list;
+    }
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="Classify-body">
     <div class="frist">
-      <router-link to="/" tag="span" class="iconfont icon-fanhui"></router-link>
+      <router-link to="#" tag="span" class="iconfont icon-fanhui"></router-link>
       <span>分类</span>
       <router-link to="/search" tag="span" class="iconfont icon-sousuo"></router-link>
     </div>
@@ -19,23 +19,28 @@
         <i class="iconfont icon-xiasanjiaoxing"></i>
       </router-link>
     </div>
+    <!-- :to="'/detail/'+item.productid" -->
     <div class="main">
       <router-link
-        to="/detail"
+        :to="'/detail/'+item.productid"
         class="mainbox"
-        tag="div"
-        v-for="(item,index) in resu" :key="index"
+        v-for="(item,index) in resu"
+        :key="index"
       >
-        <img src="" />
+        <div class="left">
+          <img :src="'//static.228.cn'+item.pbigimg" />
+          <i class="ticket-state-blue tip tip-grabSeat">预订</i>
+        </div>
         <div class="right">
           <b class="name">{{item.name}}</b>
-          <span class="span1">{{}}</span>
-          <span class=".span2"></span>
+          <span class="span1">{{item.begindate}} ～ {{item.enddate}}</span>
+          <span class=".span2">{{item.vname}}</span>
           <span class="span1">
-            <b class="red f14 mr5">{{}}</b>
+            <b class="red f14 mr5">{{item.minprice}} - {{item.maxprice}}元</b>
           </span>
         </div>
       </router-link>
+      <button class="more" @click="handleClassify(num)">查看更多</button>
       <!-- 底部 -->
       <Footer />
     </div>
@@ -43,125 +48,33 @@
 </template>
 <script>
 import Footer from "../../components/footer";
-import {classify} from "../../api/myadress"
+import { classify } from "../../api/myadress";
 export default {
   name: "Classify",
-  created(){
-      document.title=this.$route.meta.title
-  },
   components: {
     Footer
   },
-  async created(){
-    let data=await classify(10,20);
-    console.log(data.data.pagerMemory)
-    this.render(data.data.pagerMemory);
+  data() {
+    return {
+      resu: [],
+      num: 1
+    };
   },
-  data(){
-    return{
-        resu:[]
-    }
+  created() {
+    this.handleClassify();
+    document.title = this.$route.meta.title;
   },
-  methods:{
-    render(data){
-      for(let i=0;i<data.previousPage.length;i++){
-          this.resu.push(data.previousPage[i])
-      } 
-
-
-
-
+  methods: {
+    async handleClassify(num) {
+      let data = await classify(this.num++);
+      this.render(data.data.pagerMemoryList);
+    },
+    render(data) {
+      for (let i = 0; i < data.length; i++) {
+        this.resu.push(data[i]);
+      }
     }
   }
-  // data() {
-  //   return {
-  //     icfont: "iconfont",
-  //     html: "&#xe642;",
-  //     content: [
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/11/08/AfterTreatment/1573194546388_l5c2-0.jpg",
-  //         name:
-  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-  //         time: "2019.11.17",
-  //         price: "￥22.8",
-  //         id: "1001"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/10/31/AfterTreatment/1572504279871_i2c3-0.jpg",
-  //         name:
-  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-  //         time: "2019.12.14",
-  //         price: "￥380",
-  //         id: "1002"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/10/11/AfterTreatment/1570771698088_f0v3-0.jpg",
-  //         name:
-  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-  //         time: "2019.11.17",
-  //         price: "￥22.8",
-  //         id: "1003"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/09/23/AfterTreatment/1569225507050_q5p0-0.jpg",
-  //         name:
-  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-  //         time: "2019.12.14",
-  //         price: "￥380",
-  //         id: "1004"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/08/15/AfterTreatment/1565855746142_p0k7-0.jpg",
-  //         name:
-  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-  //         time: "2019.11.17",
-  //         price: "￥22.8",
-  //         id: "1005"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/07/05/AfterTreatment/1562319676003_k8k6-0.jpg",
-  //         name:
-  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-  //         time: "2019.12.14",
-  //         price: "￥380",
-  //         id: "1006"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/09/05/AfterTreatment/1567647872834_g8j5-0.jpg",
-  //         name:
-  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-  //         time: "2019.11.17",
-  //         price: "￥22.8",
-  //         id: "1007"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/06/18/AfterTreatment/1560838266418_p7n8-0.jpg",
-  //         name:
-  //           "[吴青峰合肥演唱会门票]吴青峰&quot;太空备忘记&quot;巡回演唱会-合肥站-永乐票务",
-  //         time: "2019.12.14",
-  //         price: "￥380",
-  //         id: "1008"
-  //       },
-  //       {
-  //         urlPic:
-  //           "https://static.228.cn/upload/2019/10/15/AfterTreatment/1571125267793_q2k9-0.jpg",
-  //         name:
-  //           "[吕珍九澳门演唱会门票]【双十一活动专属】YEO JIN GOO MOONLIGHT FAN MEETING IN MACAU CHINA-永乐票务",
-  //         time: "2019.11.17",
-  //         price: "￥22.8",
-  //         id: "1009"
-  //       }
-  //     ]
-  //   };
-  // }
 };
 </script>
 
@@ -175,17 +88,18 @@ export default {
 }
 .Classify-body .frist span {
   display: flex;
+  height: 0.4rem;
   justify-content: space-around;
   align-items: center;
 }
-.Classify-body .frist span:nth-of-type(1),
-.Classify-body .frist span:nth-of-type(3) {
+.Classify-body .frist .icon-fanhui,
+.Classify-body .frist .icon-sousuo {
   width: 0.4rem;
   color: #ff3a56;
   font-size: 0.18rem;
 }
 .Classify-body .frist span:nth-of-type(2) {
-  width:2.4rem;
+  width: 2.4rem;
   color: black;
   font-size: 0.17rem;
 }
@@ -254,5 +168,15 @@ export default {
 }
 .span1 {
   margin-top: 0.1rem;
+  line-height: 0.14rem;
+}
+.more {
+  width: 1.5rem;
+  margin-left: 0.8rem;
+  height: 0.3rem;
+  border-radius: 1rem;
+  font-size: 0.14rem;
+  color: #ff3a56;
+  background: #fff;
 }
 </style>
