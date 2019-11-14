@@ -51,9 +51,9 @@
         </p>
       </div>
       <div class="first-pay-first">
-        <router-link to="/classify">
-          <img src="https://static.228.cn/upload/2019/10/02/1569981870411_z0t1_m1.jpg" alt />
-        </router-link>
+        <a href=" https://m.228.cn/zhuanti/meiyunticket/index.html">
+          <img :src="'//static.228.cn/'+firstpay.IMG" alt =""/>
+        </a>
       </div>
       <h3 id="change">
         <router-link to="/home/recommend" class="active" tag="b">推荐</router-link>
@@ -72,6 +72,7 @@ import Slider from "../../components/slider";
 import Recommend from "../../components/recommend";
 import Site from "../../components/site";
 import Footer from "../../components/footer";
+import { recommend } from "../../api/myadress";
 export default {
   name: "Home",
   components: {
@@ -80,12 +81,23 @@ export default {
     Site,
     Footer
   },
+  data(){
+    return{
+      firstpay:[]
+    }
+  },
   created() {
     document.title = this.$route.meta.title;
+    this.handlefirstpay();
+  },
+  methods: {
+    async handlefirstpay() {
+      let data = await recommend();
+      this.firstpay = data.data.blockRec[0];
+    }
   }
 };
 </script>
-
 
 <style>
 /* 头部组件 */

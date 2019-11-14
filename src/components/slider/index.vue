@@ -2,7 +2,7 @@
   <div class="wh_box">
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(image, index) in images" :key="index">
-        <img v-lazy="image" />
+        <img v-lazy="'//static.228.cn/'+image.IMG" />
       </van-swipe-item>
     </van-swipe>
     <!-- <van-swipe :autoplay="3000" indicator-color="white">
@@ -15,18 +15,22 @@
 </template>>
     
 <script>
+import { recommend } from "../../api/myadress";
 export default {
   name: "Slider",
   data() {
     return {
-      images: [
-        "https://static.228.cn/upload/2019/10/02/1569998757961_c5d0.jpg",
-        "https://static.228.cn/upload/2019/11/07/1573115736897_m0o6.jpg",
-        "https://static.228.cn/upload/2019/11/07/1573122606412_i5e9.jpg",
-        "https://static.228.cn/upload/2019/11/07/1573123121139_y5x5.jpg",
-        "https://static.228.cn/upload/2019/11/07/1573123163351_o8k8.jpg"
-      ]
+      images: []
     };
+  },
+  created() {
+    this.handleSlider();
+  },
+  methods: {
+    async handleSlider() {
+      let data = await recommend();
+      this.images=data.data.slideList;
+    }
   }
 };
 </script>

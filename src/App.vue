@@ -1,11 +1,11 @@
 <template>
   <div id="app">
+    <keep-alive exclude="Detail,Vdetail,Slider">
       <router-view></router-view>
+    </keep-alive>
     <TabBar v-if="this.$route.meta.tabFlag" />
   </div>
 </template>
-
-
 <script>
 import TabBar from "./common/components/tabBar";
 export default {

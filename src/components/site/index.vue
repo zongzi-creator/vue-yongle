@@ -1,12 +1,10 @@
 <template>
   <ul class="venue cl">
-    <li v-for="(item,index) in site" :key="index" :id="item.VENUESID">
-      <a href="#">
+    <router-link :to="'/Vdetail/'+item.VENUESID" v-for="(item,index) in site" :key="index" tag="li">
         <img :src="'//static.228.cn'+item.IMG" class="imgs" />
         <b class="db mt5 name">{{item.VNAME}}</b>
         <span class="gray9 venue-address db f11">{{item.ADDRESS}}</span>
-      </a>
-    </li>
+    </router-link>
   </ul>
 </template>
 
