@@ -2,7 +2,7 @@
   <div id="body" class="love-body">
     <div class="bodybg"></div>
     <h3 class="head-tit">
-      <router-link to="/mine" class="iconfont icon-fanhui goback"></router-link>我的收藏
+      <V-touch @tap="goback()" tag="a" class="iconfont icon-fanhui goback"></v-touch>我的收藏
     </h3>
     <div class="errors unOrder tc mt100">
       <i class="iconfont icon-cainixihuan"></i>
@@ -14,7 +14,14 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  name:"Love",
+  methods:{
+    goback(){
+      this.$router.back();
+    }
+  }
+};
 </script>
 <style>
 .bodybg {

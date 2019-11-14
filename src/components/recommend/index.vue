@@ -31,12 +31,10 @@ export default {
   },
   created() {
     this.handleRecommend();
-    console.log(this);
   },
   methods: {
     async handleRecommend() {
       let data = await recommend();
-      console.log(data.data.recommendPage.list);
       this.recommends = data.data.recommendPage.list;
     }
   }

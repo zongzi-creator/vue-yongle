@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="Search-body">
     <header>
-      <router-link to="/home" tag="i" class="iconfont icon-fanhui"></router-link>
+      <v-touch @tap="goback()" tag="i" class="iconfont icon-fanhui"></v-touch>
       <span>搜索</span>
     </header>
     <div class="head">
@@ -25,6 +25,11 @@ export default {
   },
   created() {
     document.title = this.$route.meta.title;
+  },
+  methods:{
+    goback(){
+      this.$router.back();
+    }
   }
 };
 </script>

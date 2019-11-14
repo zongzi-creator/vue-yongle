@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="Mine-body">
     <div class="head">
-      <router-link to="/home" tag="i" class="iconfont icon-fanhui"></router-link>
+      <v-touch @tap="goback()" tag="i" class="iconfont icon-fanhui"></v-touch>
       <div class="headtou"></div>
       <b class="iconfont icon-kefu"></b>
       <router-link to="/setting" tag="em" class="iconfont icon-shezhi"></router-link>
@@ -58,6 +58,11 @@ export default {
   name: "Mine",
   created() {
     document.title = this.$route.meta.title;
+  },
+   methods:{
+    goback(){
+      this.$router.back();
+    }
   }
 };
 </script>

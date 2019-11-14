@@ -45,5 +45,11 @@ export const site=(type,fcity,pageNum)=>http({
     // https://m.228.cn/server/content/moreProductPlay.json?fcity=1&pageNum=1&type=1
     //场馆请求接口
 });
-
+export const venue=(id)=>http({
+    method:"get",
+    url:'server/venue/'+id+'.json',
+    data:{   
+    }     
+    //场馆请求接口
+});
 // https://m.228.cn/server/venue/143649.json
