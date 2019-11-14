@@ -13,11 +13,7 @@
       </div>
 
       <div class="head-icon">
-<<<<<<< HEAD
         <v-touch @tap="goback()" tag="a" class="iconfont icon-fanhui gobacks"></v-touch>
-=======
-        <v-touch tag="a" @tap="goback()" class="iconfont icon-fanhui gobacks"></v-touch>
->>>>>>> origin
         <router-link to="/love" class="iconfont icon-xihuan love"></router-link>
         <a href="#" class="iconfont icon-fenxiang share"></a>
       </div>
@@ -95,11 +91,7 @@ export default {
       this.resu = data.data.product;
     },
     goback(){
-<<<<<<< HEAD
-        this.$router.push("/search")
-=======
       this.$router.back();
->>>>>>> origin
     }
   },
 

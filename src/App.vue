@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <keep-alive exclude="Detail">
-=======
     <keep-alive exclude="Detail,Vdetail,Slider">
->>>>>>> origin
       <router-view></router-view>
     </keep-alive>
     <TabBar v-if="this.$route.meta.tabFlag" />
