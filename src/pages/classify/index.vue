@@ -38,7 +38,6 @@
           <span class="span1">
             <b class="red f14 mr5">￥{{item.minprice}}-{{item.maxprice}}</b>
           </span>
-
         </div>
       </router-link>
       <button class="more" @click="handleClassify()">查看更多</button>
@@ -71,11 +70,11 @@ export default {
       this.render(data.data.pagerMemoryList);
     },
     render(data) {
-      for       (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.length; i++) {
         this.resu.push(data[i]);
       }
     },
-    goback(){
+    goback() {
       this.$router.back();
     }
   }
