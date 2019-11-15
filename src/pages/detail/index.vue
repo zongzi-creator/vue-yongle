@@ -68,7 +68,6 @@
 
 
 <script>
-import Footer from "../../components/footer";
 import { detail } from "../../api/myadress";
 export default {
   name: "Detail",
@@ -77,25 +76,20 @@ export default {
       resu: []
     };
   },
-  components: {
-    Footer
-  },
   created() {
     var productid = this.$route.params.id;
     this.handleDetail(productid);
-
   },
   methods: {
     async handleDetail(productid) {
       let data = await detail(productid);
       this.resu = data.data.product;
+      console.log(data.data.product);
     },
-    goback(){
+    goback() {
       this.$router.back();
     }
-  },
-
- 
+  }
 };
 </script>
 

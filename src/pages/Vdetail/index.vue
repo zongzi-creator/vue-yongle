@@ -21,13 +21,9 @@
 
 
 <script>
-import Footer from "../../components/footer";
 import { venue } from "../../api/myadress";
 export default {
   name: "Vdetail",
-  components: {
-    Footer
-  },
   data() {
     return {
       Venue: [],
@@ -48,7 +44,6 @@ export default {
   }
 };
 </script>
-
 
 <style>
 .Vdetail-body {

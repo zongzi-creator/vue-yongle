@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="home-body">
     <div id="home-head">
-      <router-link to="/city" class="city">
+      <router-link to="/cities" class="city">
         <span>全国</span>
         <i class="iconfont icon-xiasanjiaoxing"></i>
       </router-link>
@@ -36,11 +36,11 @@
             <i class="iconfont icon-fenlei"></i>
             全部分类
           </router-link>
-          <router-link to="/classify">
+          <router-link to="/subjectPage">
             <i class="iconfont icon-huodong"></i>
             活动
           </router-link>
-          <router-link to="/classify">
+          <router-link to="#">
             <i class="iconfont icon-xihuan1"></i>
             永乐说
           </router-link>
@@ -71,7 +71,6 @@
 import Slider from "../../components/slider";
 import Recommend from "../../components/recommend";
 import Site from "../../components/site";
-import Footer from "../../components/footer";
 import { recommend } from "../../api/myadress";
 export default {
   name: "Home",
@@ -79,7 +78,6 @@ export default {
     Slider,
     Recommend,
     Site,
-    Footer
   },
   data(){
     return{

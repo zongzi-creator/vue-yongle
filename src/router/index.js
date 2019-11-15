@@ -6,18 +6,19 @@ import Classify from "../pages/classify";
 import Mine from "../pages/mine";
 import Recommend from "../components/recommend";
 import Site from "../components/site";
-import City from "../pages/city";
+import Cities from "../pages/cities";
 import Detail from "../pages/detail";
 import Vdetail from "../pages/Vdetail";
 import Goodslist from "../pages/goodslist";
-import Love from "../pages/love"
-import Setting from "../pages/setting"
-import SetAdress from "../pages/setAdress"
+import Love from "../pages/love";
+import Setting from "../pages/setting";
+import SetAdress from "../pages/setAdress";
+import SubjectPage from "../pages/subjectPage";
 Vue.use(VueRouter);
 
 //路由的配置
 const router = new VueRouter({
-  mode: "hash", //带井号的哈希值，history需要与后端做配置
+  mode: "hash", //带井号的哈希值，histor4y需要与后端做配置
   routes: [
     {
       path: "/",
@@ -71,8 +72,8 @@ const router = new VueRouter({
       }
     },
     {
-      path: "/city",
-      component: City,
+      path: "/cities",
+      component: Cities,
       meta: {
         tabFlag: false
       }
@@ -116,6 +117,13 @@ const router = new VueRouter({
     {
       path: "/setAdress",
       component: SetAdress,
+      meta: {
+        tabFlag: false
+      }
+    },
+    {
+      path: "/subjectPage",
+      component: SubjectPage,
       meta: {
         tabFlag: false
       }

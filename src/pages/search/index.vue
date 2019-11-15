@@ -1,15 +1,12 @@
 <template>
   <div id="body" class="Search-body">
-    <header>
-      <v-touch tag="i" class="iconfont icon-fanhui"></v-touch>
-      <span>搜索</span>
-    </header>
+    <Header title="搜索"/>
     <div class="head">
       <i class="iconfont icon-sousuo"></i>
       <input type="search" v-model="value" />
       <a style="text-decoration: none;" href>取消</a>
     </div>
-    <main>
+    <div class="Search-main">
       <p class="err" v-if="flag">{{err}}</p>
       <div class="container">
         <router-link
@@ -30,18 +27,14 @@
       </div>
 
       <Footer />
-    </main>
+    </div>
     <!-- 底部 -->
   </div>
 </template>
 <script>
-import Footer from "../../components/footer";
 import { search } from "../../api/myadress";
 export default {
   name: "Search",
-  components: {
-    Footer
-  },
   data() {
     return {
       value: "",
@@ -79,45 +72,9 @@ export default {
 
 
 <style>
-#body {
-  overflow-y: auto;
-  padding-bottom: 0.59rem;
-}
-.Search-body header {
-  height: 0.4rem;
-  font-size: 0.17rem;
-  display: flex;
-  padding: 0 0.4rem;
-  z-index: 155;
-  background: white;
-}
-.Search-body header i {
-  position: relative;
-  top: 0.12rem;
-  left: -0.3rem;
-  color: #ff2959;
-}
-
-.Search-body header span {
-  text-align: center;
-  line-height: 0.4rem;
-  width: 2.22rem;
-}
-.Search-body main {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  padding-top: 1rem;
-  overflow-y: auto;
-  z-index: 10;
-}
 .container{
   min-height:2.4rem;
 }
-
 .Search-body .err {
   font-size: 0.2rem;
   position: absolute;
@@ -139,13 +96,14 @@ export default {
 .Search-body .head {
   display: flex;
   height: 0.34rem;
-  position: fixed;
   width: 100%;
   justify-content: space-around;
-  padding: 0.5rem 0.2rem;
-
-  z-index: 15;
+  padding: 0.2rem 0.2rem;
   background: white;
+  margin-bottom: .2rem;
+}
+.Search-main{
+  overflow-y: auto !important;
 }
 .Search-body .head input {
   width: 2.32rem;

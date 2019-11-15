@@ -1,9 +1,6 @@
 <template>
   <div id="body" class="setAdress">
-    <header>
-      <router-link to="/home" tag="i" class="iconfont icon-fanhui"></router-link>
-      <span>收货地址</span>
-    </header>
+    <Header title="收货地址"/>
     <van-address-edit
       :area-list="areaList"
       show-postal
@@ -69,26 +66,11 @@ export default {
       } else {
         this.searchResult = [];
       }
-    }
+    },
+   
   }
+ 
 };
 </script>
 <style>
-.setAdress header {
-  height: 0.4rem;
-  font-size: 0.17rem;
-  display: flex;
-  padding: 0 0.4rem;
-}
-.setAdress header i {
-  position: relative;
-  top: 0.12rem;
-  left: -0.3rem;
-  color: #ff2959;
-}
-.setAdress header span {
-  text-align: center;
-  line-height: 0.4rem;
-  width: 2.22rem;
-}
 </style>

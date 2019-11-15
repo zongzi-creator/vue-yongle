@@ -7,6 +7,7 @@ import { Swipe, SwipeItem } from 'vant';
 import { AddressEdit } from 'vant';
 import { Area } from 'vant';
 import '@vant/touch-emulator';
+import '@common/components';
 Vue.use(Area);
 Vue.use(AddressEdit);
 Vue.use(Swipe).use(SwipeItem);
