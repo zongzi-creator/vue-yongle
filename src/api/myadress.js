@@ -59,3 +59,27 @@ export const search=(search)=>http({
     url:'/server/search/s/'+search+'.json',
   
 })
+
+
+export const searchusername=(username,password)=>http({
+    method: "get",
+    url: "http://localhost:3000/data",
+    data: {
+        username:username,
+        password:password
+      }
+})
+
+
+
+
+
+
+export const getaxios=(username,password)=>http({
+    method: "post",
+    url: "http://localhost:3000/data",
+    data: {
+        username:username,
+        password:password,
+    }
+})

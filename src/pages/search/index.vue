@@ -60,6 +60,8 @@ export default {
   methods: {
     render(data) {
         this.search=data;
+
+        
           if(this.value==""){
             this.search=[]
         }
@@ -104,6 +106,7 @@ export default {
     right: 0;
     padding-top: 1rem;
     overflow-y: auto;
+    padding-bottom:.55rem;
    z-index:10
 }
 .Search-body .err{

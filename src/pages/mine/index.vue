@@ -6,7 +6,7 @@
       <b class="iconfont icon-kefu"></b>
       <router-link to="/setting" tag="em" class="iconfont icon-shezhi"></router-link>
     </div>
-    <p class="p">S****5</p>
+    <router-link to="/login" tag="p" class="p">111</router-link>
     <main>
       <div class="bottom">
         <router-link to="#" tag="span">
