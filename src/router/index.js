@@ -10,10 +10,19 @@ import Cities from "../pages/cities";
 import Detail from "../pages/detail";
 import Vdetail from "../pages/Vdetail";
 import Goodslist from "../pages/goodslist";
+<<<<<<< HEAD
 import Love from "../pages/love";
 import Setting from "../pages/setting";
 import SetAdress from "../pages/setAdress";
 import SubjectPage from "../pages/subjectPage";
+=======
+import Love from "../pages/love"
+import Setting from "../pages/setting"
+import SetAdress from "../pages/setAdress"
+import Login from "../pages/login"
+import Registe from "../pages/registe"
+
+>>>>>>> 更新登录注册
 Vue.use(VueRouter);
 
 //路由的配置
@@ -128,6 +137,17 @@ const router = new VueRouter({
         tabFlag: false
       }
     },
+    {  path:"/login",
+      component:Login,
+      meta: {
+        tabFlag: false
+      }
+    },
+    {
+      path:"/registe",
+      component:Registe,
+  
+    }
   ]
 });
 

@@ -2,7 +2,7 @@
   <div class="wh_box">
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(image, index) in images" :key="index">
-        <img v-lazy="'//static.228.cn/'+image.IMG" />
+          <a :href="'https://m.228.cn'+image.URL"><img v-lazy="'//static.228.cn/'+image.IMG" /></a>
       </van-swipe-item>
     </van-swipe>
     <!-- <van-swipe :autoplay="3000" indicator-color="white">
@@ -29,6 +29,7 @@ export default {
   methods: {
     async handleSlider() {
       let data = await recommend();
+      console.log(data)
       this.images=data.data.slideList;
     }
   }
