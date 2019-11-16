@@ -61,19 +61,12 @@ export default {
   },
   methods: {
     render(data) {
-<<<<<<< HEAD
-      this.search = data;
-      if (this.value == "") {
-        this.search = [];
-      }
-=======
         this.search=data;
 
         
           if(this.value==""){
             this.search=[]
         }
->>>>>>> 更新登录注册
     }
   }
 };
@@ -84,54 +77,12 @@ export default {
 .container{
   min-height:2.4rem;
 }
-<<<<<<< HEAD
 .Search-body .err {
   font-size: 0.2rem;
   position: absolute;
   top: 30%;
   left: 32%;
   animation: jump 3s infinite;
-=======
-.Search-body header {
-  height: 0.4rem;
-  font-size: 0.17rem;
-  display: flex;
-  padding: 0 0.4rem;
-   z-index:155;
-   background:white
-
-}
-.Search-body header i {
-  position: relative;
-  top: 0.12rem;
-  left: -0.3rem;
-  color: #ff2959;
-}
-
-.Search-body header span {
-  text-align: center;
-  line-height: 0.4rem;
-  width: 2.22rem;
-}
-.Search-body main {
-  height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding-top: 1rem;
-    overflow-y: auto;
-    padding-bottom:.55rem;
-   z-index:10
-}
-.Search-body .err{
-  font-size:.2rem;
-  position:absolute;
-  top:30%;
-  left:32%;
-  animation:jump 3s  infinite;
->>>>>>> 更新登录注册
 }
 @keyframes jump {
   0% {
