@@ -3,7 +3,7 @@
     <div class="bodybg"></div>
     <Header title="活动专区" />
     <div class="subMain">
-      <div v-for="(itemAll,index) in list" :key="index">
+      <div class="contL" v-for="(itemAll,index) in list" :key="index">
         <div class="list" v-for="(item,index) in itemAll" :key="index">
           <div class="photo">
             <img :src="'//static.228.cn'+item.IMG" />
@@ -15,7 +15,6 @@
       <button @click="handleMore(pageNum++)" class="more">查看更多</button>
       <Footer />
     </div>
-    <!-- 底部 -->
   </div>
 </template>
 <script>
@@ -45,12 +44,15 @@ export default {
 };
 </script>
 <style>
-.sub-body .subMain {
+.sub-body .subMain{
   font-size: 0.14rem;
   font-weight: 400;
   padding-bottom: 0.5rem;
   margin: 0.15rem;
-  overflow-y: auto !important;
+}
+.sub-body .contL {
+    overflow-y: auto !important;
+
 }
 .sub-body .list {
   flex-shrink: 0;

@@ -57,9 +57,8 @@
     </div>
     <footer>
       <router-link tag="a" to="#" class="iconfont icon-kefu"></router-link>
-      <router-link tag="button" to="/goodslist">立即预定</router-link>
+      <router-link tag="button" to="/goodslist" class="butt">立即预定</router-link>
     </footer>
-    <button class="more">查看更多</button>
   </div>
 </template>
 
@@ -296,7 +295,7 @@ export default {
   width: 100% !important;
   height: auto;
 }
-.detail-body .detail-body footer {
+ .detail-body footer {
   position: fixed;
   width: 100%;
   background: #fff;
@@ -320,7 +319,7 @@ export default {
   font-size: 0.3rem;
   color: #ff7e6f;
 }
-.detail-body footer button {
+.detail-body footer .butt{
   width: 2.3rem;
   font-size: 0.2rem;
   height: 0.45rem;

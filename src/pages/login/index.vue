@@ -3,7 +3,7 @@
     <div class="head">
       <i class="iconfont icon-fanhui" @click="back()"></i>
     </div>
-    <main>
+    <div class="Lmain">
       <h3>会员登录</h3>
       <div id="input">
         <input type="search" placeholder="手机号/邮箱"  v-model="username"/>
@@ -17,7 +17,7 @@
       </p>
       <v-touch @tap="registe()" tag="button" >登录</v-touch>
       <router-link to="/registe" tag="a">没有账号？立即注册</router-link>
-    </main>
+    </div>
   </div>
 </template>
 <script>
@@ -91,12 +91,12 @@ export default {
   left: 0.2rem;
   top: 0.15rem;
 }
-.body-login main {
+.body-login .Lmain {
   display: flex;
   flex-direction: column;
   padding: 0.3rem 0.5rem;
 }
-.body-login main h3 {
+.body-login .Lmain h3 {
   font-size: 0.3rem;
   color: white;
   margin-bottom: 0.3rem;
@@ -133,7 +133,7 @@ export default {
   left: 10px;
   color: #ccc;
 }
-.body-login main p {
+.body-login .Lmain p {
   display: inline;
   font-size: 0.14rem;
   display: flex;
@@ -141,15 +141,15 @@ export default {
   align-items: center;
   padding: 0 0.05rem;
 }
-.body-login main p span {
+.body-login .Lmain p span {
   display: flex;
   align-items: center;
   color: #ccc;
 }
-.body-login main p span input {
+.body-login .Lmain p span input {
   margin-right: 0.05rem;
 }
-.body-login main button {
+.body-login .Lmain button {
   width: 100%;
   height: 0.45rem;
   border-radius: 1rem;
@@ -161,7 +161,7 @@ export default {
 
   border: none;
 }
-.body-login main a {
+.body-login .Lmain a {
   margin-top: 0.5rem;
   text-align: center;
   font-size: 0.15rem;
