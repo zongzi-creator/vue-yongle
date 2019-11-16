@@ -1,11 +1,8 @@
 <template>
   <div id="body" class="Vdetail-body">
-    <header>
-      <router-link to="/home" tag="i" class="iconfont icon-fanhui"></router-link>
-      <span>场馆信息</span>
-    </header>
+    <Header title="场馆信息" />
     <div class="head"></div>
-    <main>
+    <div class="Vmain">
       <img class="imgs" 
         src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3578341852,4154240613&fm=26&gp=0.jpg"
         alt=""
@@ -15,11 +12,9 @@
       <div class="showDetails" v-html="Venue.info"></div>
       <div class="adress">地址：{{Venue.address}}</div>
       <Footer />
-    </main>
+    </div>
   </div>
 </template>
-
-
 <script>
 import { venue } from "../../api/myadress";
 export default {
@@ -44,38 +39,15 @@ export default {
   }
 };
 </script>
-
 <style>
-.Vdetail-body {
+.Vdetail-body .Vmain {
   overflow-y: auto !important;
-}
-.Vdetail-body header {
-  height: 0.4rem;
-  font-size: 0.17rem;
-  display: flex;
-  padding: 0 0.4rem;
-}
-.Vdetail-body header i {
-  position: relative;
-  top: 0.12rem;
-  left: -0.3rem;
-  color: #ff2959;
-}
-
-.Vdetail-body header span {
-  text-align: center;
-  line-height: 0.4rem;
-  width: 2.22rem;
-}
-.Vdetail-body main {
-  height: 100%;
 }
 .Vdetail-body .head {
   display: flex;
   height: 0.34rem;
   justify-content: space-around;
   padding: 0 0.2rem;
-  margin-top: 0.04rem;
 }
 .Vdetail-body img,
 .Vdetail-body .imgs {

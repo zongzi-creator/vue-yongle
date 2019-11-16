@@ -18,7 +18,6 @@
         <a href="#" class="iconfont icon-fenxiang share"></a>
       </div>
 
-      <!---->
       <div class="head-con">
         <div class="left">
           <img :src="'//static.228.cn'+resu.PBIGIMG" style="background: rgba(141, 49, 1, 0.3);" />
@@ -30,7 +29,6 @@
             <span class="fl mr08 real-name-icon">
               <i></i>实名观演
             </span>
-            <!---->
           </div>
           <b class="price f14 mt30 db">
             <em class="f16">
@@ -46,7 +44,6 @@
 
     <div class="detailMain">
       <div class="tips" v-html="resu.SPECIAL + resu.ROBTICKETTIPS"></div>
-
       <h3 class="con-tit mb15">
         <b>注意事项</b>
       </h3>
@@ -66,7 +63,6 @@
   </div>
 </template>
 
-
 <script>
 import { detail } from "../../api/myadress";
 export default {
@@ -84,7 +80,6 @@ export default {
     async handleDetail(productid) {
       let data = await detail(productid);
       this.resu = data.data.product;
-      console.log(data.data.product);
     },
     goback() {
       this.$router.back();
@@ -95,29 +90,16 @@ export default {
 
 
 <style>
-.detail-body {
-  overflow-y: auto !important;
-}
-.bodybg {
-  background: #f5f6f7;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-.detailHeader {
+.detail-body .detailHeader {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 3.19rem;
+  height: 2.8rem;
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  margin-bottom: 0.2rem;
 }
-.head-bg {
+.detail-body .head-bg {
   top: 0;
   position: absolute;
   height: 1.9rem;
@@ -125,7 +107,7 @@ export default {
   overflow: hidden;
   z-index: 1;
 }
-.head-bg .bgImg {
+.detail-body .head-bg .bgImg {
   position: absolute;
   content: "";
   z-index: 1;
@@ -136,7 +118,7 @@ export default {
   border-radius: 50%;
   overflow: hidden;
 }
-.head-bg .bgImg .bgImgBg {
+.detail-body .head-bg .bgImg .bgImgBg {
   position: absolute;
   content: "";
   -webkit-filter: blur(10px);
@@ -148,7 +130,7 @@ export default {
   width: 100%;
   background-size: 200%;
 }
-.head-bg .bgImg-black {
+.detail-body .head-bg .bgImg-black {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
@@ -157,14 +139,14 @@ export default {
   left: 0;
   z-index: 2;
 }
-.head-con {
+.detail-body .head-con {
   margin: 0.3rem 0.2rem 0;
   overflow: hidden;
   z-index: 9;
   position: relative;
 }
 
-.head-con .left {
+.detail-body .head-con .left {
   position: relative;
   float: left;
   width: 1.2rem;
@@ -174,13 +156,13 @@ export default {
   border-radius: 0.1rem;
   overflow: hidden;
 }
-.head-con .left img {
+.detail-body .head-con .left img {
   width: 100%;
   height: 100%;
   background: rgba(141, 49, 1, 0.3);
 }
 
-.head-icon {
+.detail-body .head-icon {
   flex-shrink: 0;
   margin-top: 0.29rem;
   width: calc(100% - 0.3rem);
@@ -190,24 +172,24 @@ export default {
   z-index: 9;
   display: flex;
 }
-.head-icon a {
+.detail-body .head-icon a {
   height: 0.31rem;
   font-size: 0.2rem;
   display: block;
   color: white;
 }
-.head-icon .gobacks {
+.detail-body .head-icon .gobacks {
   width: 20%;
 }
-.head-icon .love {
+.detail-body .head-icon .love {
   width: 66%;
   text-align: right;
 }
-.head-icon .share {
+.detail-body .head-icon .share {
   width: 10%;
   text-align: right;
 }
-.tip {
+.detail-body .tip {
   display: block;
   height: 0.2rem;
   line-height: 0.2rem;
@@ -222,16 +204,16 @@ export default {
   left: 0;
   text-align: center;
 }
-.gradual-red {
+.detail-body .gradual-red {
   background: linear-gradient(to right, #ff7e6f, #ff2959);
   box-shadow: 0px 2px 6px 0px rgba(255, 37, 68, 0.2);
 }
-.head-con .right {
+.detail-body .head-con .right {
   float: left;
   margin-left: 0.15rem;
   width: calc(100% - 1.35rem);
 }
-.head-con .right h3 {
+.detail-body .head-con .right h3 {
   height: 0.63rem;
   line-height: 0.21rem;
   overflow: hidden;
@@ -241,64 +223,64 @@ export default {
   -webkit-line-clamp: 3;
   font-size: 0.15rem;
 }
-.white {
+.detail-body .white {
   color: white;
 }
-.product-icon {
+.detail-body .product-icon {
   height: 0.18rem;
 }
-.mt8 {
+.detail-body .mt8 {
   margin-top: 0.08rem;
 }
-.cl {
+.detail-body .cl {
   zoom: 1;
 }
-.product-icon span {
+.detail-body .product-icon span {
   letter-spacing: 0.5px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.12rem;
 }
-.mr08 {
+.detail-body .mr08 {
   margin-right: 0.08rem;
 }
-.fl {
+.detail-body .fl {
   float: left;
 }
-.f14 {
+.detail-body .f14 {
   font-size: 0.14rem;
 }
-.mt30 {
+.detail-body .mt30 {
   margin-top: 0.3rem;
 }
-.db {
+.detail-body .db {
   display: block;
 }
-b {
+.detail-body b {
   font-weight: bold;
 }
-.f16 {
+.detail-body .f16 {
   font-size: 0.16rem;
 }
-em {
+.detail-body em {
   font-style: normal;
 }
-.detailMain {
-  flex: 1;
-  flex-shrink: 0;
+.detail-body .detailMain {
+  height: 100%;
+  overflow-y: auto !important;
 }
-.con-tit {
+.detail-body .con-tit {
   font-size: 0.22rem;
   color: #000;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
   font-weight: bold;
 }
-.mb15 {
+.detail-body .mb15 {
   margin-bottom: 0.15rem;
 }
-.need-attention,
-.tips,
-.showDetails {
+.detail-body .need-attention,
+.detail-body .tips,
+.detail-body .showDetails {
   border-radius: 0.05rem;
   background: #fff;
   font-weight: bold;
@@ -308,12 +290,12 @@ em {
   font-size: 0.14rem;
   color: #7b8187;
 }
-.showDetails img,
-.showDetails p img {
+.detail-body .showDetails img,
+.detail-body .showDetails p img {
   width: 100% !important;
   height: auto;
 }
-.detail-body footer {
+.detail-body .detail-body footer {
   position: fixed;
   width: 100%;
   background: #fff;

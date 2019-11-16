@@ -1,5 +1,5 @@
 <template>
-  <div class="body-login">
+  <div class="body-login body-lR">
     <div class="head">
       <i class="iconfont icon-fanhui" @click="back()"></i>
     </div>
@@ -49,18 +49,6 @@ export default {
 };
 </script>
 <style>
-.body-login,
-html {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: url("https://m2static.228.cn/images/loginBg.jpg") no-repeat center
-    center;
-  overflow-y: auto;
-}
-html {
-  font-size: 31.25vw;
-}
 .body-login header {
   height: 0.4rem;
   font-size: 0.17rem;

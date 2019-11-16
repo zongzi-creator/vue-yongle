@@ -1,5 +1,5 @@
 <template>
-  <div id="body" class="body-registe">
+  <div id="body" class="body-registe body-lR">
     <div class="head">
       <v-touch @tap="goback()" tag="i" class="iconfont icon-fanhui"></v-touch>
     </div>
@@ -46,7 +46,6 @@ export default {
         return
         }
         alert("该账户存在")
-        console.log(data)
       }else if(this.username!="" && this.password!=""){
         let data = await getaxios(this.username,this.password);
         alert("注册成功")
@@ -57,14 +56,6 @@ export default {
 };
 </script>
 <style>
-/* .body-registe{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: url("https://m2static.228.cn/images/loginBg.jpg") no-repeat center
-    center;
-  overflow-y: auto;
-} */
 .body-registe header {
   height: 0.4rem;
   font-size: 0.17rem;

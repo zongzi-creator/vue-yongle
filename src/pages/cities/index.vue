@@ -1,9 +1,9 @@
 <template>
   <div id="body" class="city-body">
     <div class="head-tit">
-      <router-link to="/" class="iconfont icon-fanhui goback"></router-link>
-      <span class="word">选择演出城市</span>
-    </div>
+    <router-link to="/" tag="a" class="iconfont icon-fanhui goback"></router-link>
+    <span class="word"> 选择演出城市</span>
+  </div>
     <div class="main">
       <div class="position-city">
         定位城市
@@ -35,7 +35,7 @@ export default {
   created() {
     this.handleCT();
   },
-  methods: {
+  methods:{
     async handleCT() {
       let data = await CT();
       this.Hcities = data.data.hotCitys;
@@ -46,41 +46,35 @@ export default {
 };
 </script>
 <style>
-.city-body{
-  overflow-y: auto !important;
-}
-#City-body .main {
-  height: 100%;
-  flex-shrink: 0;
+.city-body .main {
   overflow-y: auto;
-  padding-bottom: 0.5rem;
 }
-.position-city {
+.city-body .main .position-city {
   margin-top: 0.2rem;
   margin-left: 0.2rem;
   font-size: 0.13rem;
   color: #999;
 }
-.position-city em {
+.city-body .main .position-city em {
   font-style: normal;
   margin-left: 0.1rem;
   font-size: 0.14rem;
   color: #ff3a56;
 }
-.city-tit {
+.city-body .main .city-tit {
   font-weight: normal;
   font-size: 0.13rem;
   color: #999;
   margin: 0.2rem 0.2rem 0;
 }
-.city-hot {
+.city-body .main .city-hot {
   margin: 0.1rem 0.2rem;
   overflow: hidden;
   text-align: center;
   font-size: 0.14rem;
 }
 
-.city-hot span {
+.city-body .main .city-hot span {
   height: 0.4rem;
   line-height: 0.4rem;
   width: calc(100% / 4);
@@ -89,10 +83,10 @@ export default {
   color: #7b8187;
   font-size: 0.14rem;
 }
-.city-hot span.active {
+.city-body .main .city-hot span.active {
   color: #ff2959;
 }
-.city-tabs {
+.city-body .main .city-tabs {
   position: initial;
 }
 </style>

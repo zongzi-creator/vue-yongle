@@ -40,12 +40,11 @@ export default {
   width: 100%;
   text-align: center;
   padding: 0.2rem 0;
-  margin-bottom: 0.5rem;
 }
-.mb5 {
+.foot .mb5 {
   margin-bottom: 0.05rem !important;
 }
-.mb20 {
+.foot .mb20 {
   margin-bottom: 0.2rem !important;
 }
 .foot p {

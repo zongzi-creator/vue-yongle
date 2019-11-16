@@ -99,7 +99,6 @@ export default {
 
 <style>
 /* 头部组件 */
-
 .home-body #home-head {
   padding: 0.04rem 0.15rem 0.04rem 0.1rem;
   display: flex;

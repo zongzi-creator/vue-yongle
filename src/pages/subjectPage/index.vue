@@ -1,10 +1,7 @@
 <template>
   <div id="body" class="sub-body">
     <div class="bodybg"></div>
-    <div class="head-tit">
-      <router-link to="/" class="iconfont icon-fanhui goback"></router-link>
-      <span class="word">活动专区</span>
-    </div>
+    <Header title="活动专区" />
     <div class="subMain">
       <div v-for="(itemAll,index) in list" :key="index">
         <div class="list" v-for="(item,index) in itemAll" :key="index">
@@ -47,8 +44,6 @@ export default {
   }
 };
 </script>
-
-
 <style>
 .sub-body .subMain {
   font-size: 0.14rem;
@@ -57,7 +52,6 @@ export default {
   margin: 0.15rem;
   overflow-y: auto !important;
 }
-
 .sub-body .list {
   flex-shrink: 0;
   margin-bottom: 0.2rem;
@@ -81,5 +75,14 @@ export default {
   margin: 0.2rem;
   font-size: 0.17rem;
   font-weight: bold;
+}
+.sub-body .more {
+  width: 1.5rem;
+  margin-left: 0.8rem;
+  height: 0.3rem;
+  border-radius: 1rem;
+  font-size: 0.14rem;
+  color: #ff3a56;
+  background: #fff;
 }
 </style>

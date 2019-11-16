@@ -32,7 +32,6 @@ export default {
 
 <style>
 /*场馆列表*/
-
 .venue {
   width: calc(100% - 0.4rem);
   margin: 0 0.2rem;
@@ -50,10 +49,10 @@ export default {
   margin-bottom: 0.12rem;
   height: 1.8rem;
 }
-.mt5 {
+.venue .mt5 {
   margin-top: 0.05rem;
 }
-.db {
+.venue .db {
   display: block;
 }
 .venue li .name {
@@ -65,7 +64,6 @@ export default {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-
 .venue .imgs {
   width: 100%;
   height: 1.4rem;
@@ -76,10 +74,10 @@ export default {
   white-space: nowrap;
   overflow: hidden;
 }
-.f11 {
+.venue .f11 {
   font-size: 0.11rem;
 }
-.gray9 {
+.venue .gray9 {
   color: #999;
 }
 </style>

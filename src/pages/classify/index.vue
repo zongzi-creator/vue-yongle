@@ -1,6 +1,5 @@
 <template>
   <div id="body" class="Classify-body">
-    
     <Header title="分类" sousuo/>
     <div class="header">
       <router-link to="/city" tag="span" class="iconfont">
@@ -16,7 +15,7 @@
         <i class="iconfont icon-xiasanjiaoxing"></i>
       </router-link>
     </div>
-    <!-- :to="'/detail/'+item.productid" -->
+
     <div class="main">
       <router-link
         :to="'/detail/'+item.productid"
@@ -67,13 +66,9 @@ export default {
         this.resu.push(data[i]);
       }
     },
-    goback() {
-      this.$router.back();
-    }
   }
 };
 </script>
-
 
 <style>
 .Classify-body .header {
@@ -139,11 +134,11 @@ export default {
   overflow: hidden;
   font-size: 0.12rem;
 }
-.span1 {
+.Classify-body .span1 {
   margin-top: 0.1rem;
   line-height: 0.14rem;
 }
-.more {
+.Classify-body .more {
   width: 1.5rem;
   margin-left: 0.8rem;
   height: 0.3rem;

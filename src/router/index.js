@@ -72,7 +72,7 @@ const router = new VueRouter({
       meta: {
         title:"我的",
         tabFlag: true
-      }
+      } 
     },
     {
       path: "/cities",
@@ -144,5 +144,4 @@ const router = new VueRouter({
     }
   ]
 });
-
 export default router;

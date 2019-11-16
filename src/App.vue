@@ -7,23 +7,13 @@
   </div>
 </template>
 <script>
-import TabBar from "./common/components/tabBar";
 export default {
   name: "App",
-  components: {
-    TabBar
-  }
 };
 </script>
 
 
 <style>
-#app {
-  display: flex;
-  height: 100%;
-  overflow: hidden;
-  flex-direction: column;
-}
 </style>
 
 
