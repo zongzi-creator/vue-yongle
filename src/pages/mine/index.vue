@@ -132,6 +132,7 @@ export default {
   height: 0.8rem;
   border-bottom: 1px solid rgb(226, 220, 220);
   display: flex;
+  justify-content: center;
   flex-shrink: 0;
 }
 .Mine-body .bottom span {

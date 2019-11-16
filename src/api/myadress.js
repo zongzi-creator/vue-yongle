@@ -50,13 +50,38 @@ export const venue=(id)=>http({
     url:'server/venue/'+id+'.json',
     data:{   
     }     
-    //场馆请求接口
+    //场馆详情请求接口
 });
 // https://m.228.cn/server/venue/143649.json
 
 export const search=(search)=>http({
     method:"get",
     url:'/server/search/s/'+search+'.json',
+<<<<<<< HEAD
+    // 搜索页请求接口
+})
+
+export const subjectPage=()=>http({
+    method:"get",
+    url:'/server/subject/list.json' 
+    // 活动专区页请求接口   
+    // https://m.228.cn/server/subject/list.json                          
+})
+
+export const morePage=()=>http({
+    method:"get",
+    url:'/server/subject/more.json?pageNum=2' 
+    // 活动专区更多页面请求接口   
+    // https://m.228.cn/server/subject/                        
+})
+
+export const CT=()=>http({
+    method:"get",
+    url:'/server/content/city/list.json' 
+    // 城市页面请求接口   
+    // https://m.228.cn/server/content/city/list.json})
+})
+=======
   
 })
 
@@ -83,3 +108,7 @@ export const getaxios=(username,password)=>http({
         password:password,
     }
 })
+<<<<<<< HEAD
+=======
+>>>>>>> 更新登录注册
+>>>>>>> master

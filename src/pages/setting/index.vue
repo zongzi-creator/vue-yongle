@@ -1,9 +1,6 @@
 <template>
   <div id="body" class="Setting-body">
-    <header>
-      <router-link to="/mine" tag="i" class="iconfont icon-fanhui"></router-link>
-      <span>账号管理</span>
-    </header>
+    <Header title="设置"/>
     <main>
       <p>
         <b>昵称</b>
@@ -23,7 +20,12 @@
       </p>
       <p>
         <b>收货地址</b>
-        <i style="font-size:.15rem" class="iconfont icon-jiantouyou"></i>
+        <router-link
+          to="/setAdress"
+          tag="i"
+          style="font-size:.15rem"
+          class="iconfont icon-jiantouyou"
+        ></router-link>
       </p>
       <p>
         <b>常用购票人</b>
@@ -44,58 +46,10 @@ export default {
   name: "Setting",
   created() {
     document.title = this.$route.meta.title;
-  }
+  },
 };
 </script>
 <style >
-.Setting-body header {
-  height: 0.4rem;
-  font-size: 0.17rem;
-  display: flex;
-  padding: 0 0.4rem;
-}
-.Setting-body .icon-fanhui {
-  font-size: 0.15rem;
-}
-.Setting-body header i {
-  color: #ff2959;
-  position: relative;
-  top: 0.12rem;
-  left: -0.3rem;
-}
-.Setting-body header span {
-  text-align: center;
-  line-height: 0.4rem;
-  flex: 1;
-}
-
-.Setting-body .head {
-  display: flex;
-  height: 0.34rem;
-  justify-content: space-around;
-  padding: 0 0.2rem;
-  margin-top: 0.04rem;
-}
-.Setting-body .head input {
-  flex: 1;
-  border-radius: 1rem;
-  padding: 0 0.3rem;
-  background: #f3f4f5;
-  border: none;
-  outline: none;
-}
-.Setting-body .head a {
-  line-height: 0.34rem;
-  font-size: 0.15rem;
-}
-.Setting-body .head i {
-  color: #ff2959;
-  position: relative;
-  top: 0.07rem;
-  left: 0.26rem;
-  right: 0;
-  bottom: 0;
-}
 .Setting-body main {
   flex: 1;
 }
@@ -105,7 +59,6 @@ export default {
   border-bottom: 1px solid rgb(250, 241, 241);
   font-size: 0.15rem;
   margin-left: 0.3rem;
-  /* padding:0 0.3rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;

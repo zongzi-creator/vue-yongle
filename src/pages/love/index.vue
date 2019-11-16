@@ -1,9 +1,7 @@
 <template>
   <div id="body" class="love-body">
     <div class="bodybg"></div>
-    <h3 class="head-tit">
-      <V-touch @tap="goback()" tag="a" class="iconfont icon-fanhui goback"></v-touch>我的收藏
-    </h3>
+    <Header title="我的收藏"/>
     <div class="errors unOrder tc mt100">
       <i class="iconfont icon-cainixihuan"></i>
       <p class="f14 red">您还没有收藏的商品</p>
@@ -16,11 +14,6 @@
 <script>
 export default {
   name:"Love",
-  methods:{
-    goback(){
-      this.$router.back();
-    }
-  }
 };
 </script>
 <style>
@@ -32,25 +25,6 @@ export default {
   top: 0;
   left: 0;
   z-index: -1;
-}
-.love-body .head-tit {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 0.4rem;
-  width: 100%;
-  font-size: 0.17rem;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-.love-body .head-tit .goback {
-  left: 0.15rem;
-  width: 0.18rem;
-  height: 0.18rem;
-  font-size: 0.18rem;
-  position: absolute;
-  display: block;
-  top: 0.11rem;
 }
 .mt100 {
   margin-top: 1rem;

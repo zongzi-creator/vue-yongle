@@ -1,10 +1,7 @@
 <template>
   <div id="body" class="Classify-body">
-    <div class="frist">
-      <v-touch @tap="goback()" tag="span" class="iconfont icon-fanhui"></v-touch>
-      <span>分类</span>
-      <router-link to="/search" tag="span" class="iconfont icon-sousuo"></router-link>
-    </div>
+    
+    <Header title="分类" sousuo/>
     <div class="header">
       <router-link to="/city" tag="span" class="iconfont">
         全国
@@ -38,7 +35,6 @@
           <span class="span1">
             <b class="red f14 mr5">￥{{item.minprice}}-{{item.maxprice}}</b>
           </span>
-
         </div>
       </router-link>
       <button class="more" @click="handleClassify()">查看更多</button>
@@ -48,13 +44,9 @@
   </div>
 </template>
 <script>
-import Footer from "../../components/footer";
 import { classify } from "../../api/myadress";
 export default {
   name: "Classify",
-  components: {
-    Footer
-  },
   data() {
     return {
       resu: [],
@@ -71,11 +63,11 @@ export default {
       this.render(data.data.pagerMemoryList);
     },
     render(data) {
-      for       (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.length; i++) {
         this.resu.push(data[i]);
       }
     },
-    goback(){
+    goback() {
       this.$router.back();
     }
   }
@@ -84,29 +76,6 @@ export default {
 
 
 <style>
-.Classify-body .frist {
-  height: 0.4rem;
-  background: white;
-  display: flex;
-  flex-shrink: 0;
-}
-.Classify-body .frist span {
-  display: flex;
-  height: 0.4rem;
-  justify-content: space-around;
-  align-items: center;
-}
-.Classify-body .frist .icon-fanhui,
-.Classify-body .frist .icon-sousuo {
-  width: 0.4rem;
-  color: #ff3a56;
-  font-size: 0.18rem;
-}
-.Classify-body .frist span:nth-of-type(2) {
-  width: 2.4rem;
-  color: black;
-  font-size: 0.17rem;
-}
 .Classify-body .header {
   flex-shrink: 0;
   height: 0.45rem;
