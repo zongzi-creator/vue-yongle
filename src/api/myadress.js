@@ -94,10 +94,6 @@ export const searchusername=(username,password)=>http({
 })
 
 
-
-
-
-
 export const getaxios=(username,password)=>http({
     method: "post",
     url: "http://localhost:3000/data",
@@ -106,4 +102,3 @@ export const getaxios=(username,password)=>http({
         password:password,
     }
 })
->>>>>>> 更新登录注册
