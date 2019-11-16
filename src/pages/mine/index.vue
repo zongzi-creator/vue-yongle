@@ -7,7 +7,7 @@
       <router-link to="/setting" tag="em" class="iconfont icon-shezhi"></router-link>
     </div>
     <router-link to="/login" tag="p" class="p">111</router-link>
-    <main>
+    <div class="mine-main">
       <div class="bottom">
         <router-link to="#" tag="span">
           <p>0张</p>
@@ -49,8 +49,7 @@
           <i class="iconfont icon-pingzheng-normal"></i>观演凭证
         </router-link>
       </div>
-      <div class="registerthree"></div>
-    </main>
+    </div>
   </div>
 </template>
 <script>
@@ -121,7 +120,7 @@ export default {
   font-size: 0.15rem;
   text-align: center;
 }
-.Mine-body main {
+.Mine-body .mine-main {
   height: 100%;
   overflow-y: auto;
   flex-shrink: 0;
@@ -171,20 +170,16 @@ export default {
   align-items: center;
   flex-shrink: 0;
 }
-.Mine-body .registerthree {
-  height: 1.5rem;
-}
+
 .Mine-body .registerone span,
-.Mine-body .registertwo span,
-.Mine-body .registerthree span {
+.Mine-body .registertwo span{
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 0.15rem;
 }
 .Mine-body .registerone span i,
-.Mine-body .registertwo span i,
-.Mine-body .registerthree span i {
+.Mine-body .registertwo span i{
   color: rgb(43, 216, 216);
   font-size: 0.25rem;
 }

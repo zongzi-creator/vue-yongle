@@ -57,18 +57,14 @@ export default {
 };
 </script>
 <style>
-.body-registe,
-html {
+/* .body-registe{
   height: 100%;
   display: flex;
   flex-direction: column;
   background: url("https://m2static.228.cn/images/loginBg.jpg") no-repeat center
     center;
   overflow-y: auto;
-}
-html {
-  font-size: 31.25vw;
-}
+} */
 .body-registe header {
   height: 0.4rem;
   font-size: 0.17rem;
