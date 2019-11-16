@@ -4,7 +4,7 @@
     <Header title="活动专区" />
     <div class="subMain">
       <div class="contL" v-for="(itemAll,index) in list" :key="index">
-        <div class="list" v-for="(item,index) in itemAll" :key="index">
+        <div  class="list" v-for="(item,index) in itemAll" :key="index">
           <div class="photo">
             <img :src="'//static.228.cn'+item.IMG" />
           </div>
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       list: [],
-      pageNum:2
+      pageNum: 2
     };
   },
   created() {
@@ -37,22 +37,21 @@ export default {
       this.list.push(data.data.subjectPage.list);
     },
     async handleMore() {
-      let data = await morePage();
+      let data = await morePage(this.pageNum);
       this.list.push(data.data.subjectPage.list);
     }
   }
 };
 </script>
 <style>
-.sub-body .subMain{
+.sub-body .subMain {
   font-size: 0.14rem;
   font-weight: 400;
-  padding-bottom: 0.5rem;
   margin: 0.15rem;
+  overflow-y: auto !important;
 }
 .sub-body .contL {
-    overflow-y: auto !important;
-
+  overflow-y: auto !important;
 }
 .sub-body .list {
   flex-shrink: 0;

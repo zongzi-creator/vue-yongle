@@ -14,11 +14,13 @@ import Love from "../pages/love";
 import Setting from "../pages/setting";
 import SetAdress from "../pages/setAdress";
 import SubjectPage from "../pages/subjectPage";
-import Login from "../pages/login"
-import Registe from "../pages/registe"
+import Login from "../pages/login";
+import Registe from "../pages/registe";
+import Coupon from "../pages/coupon";
+import Question from "../pages/question";
+import Dengji from "../pages/dengji";
 
 Vue.use(VueRouter);
-
 //路由的配置
 const router = new VueRouter({
   mode: "hash", //带井号的哈希值，histor4y需要与后端做配置
@@ -110,6 +112,20 @@ const router = new VueRouter({
       }
     },
     {
+      path: "/question",
+      component: Question,
+      meta: {
+        tabFlag: false
+      }
+    },
+    {
+      path: "/dengji",
+      component: Dengji,
+      meta: {
+        tabFlag: false
+      }
+    },
+    {
       path: "/setting",
       component: Setting,
       meta: {
@@ -140,7 +156,16 @@ const router = new VueRouter({
     {
       path:"/registe",
       component:Registe,
-  
+      meta: {
+        tabFlag: false
+      }
+    },
+    {
+      path:"/coupon",
+      component:Coupon,
+      meta: {
+        tabFlag: false
+      }
     }
   ]
 });

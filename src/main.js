@@ -8,6 +8,9 @@ import { AddressEdit } from 'vant';
 import { Area } from 'vant';
 import '@vant/touch-emulator';
 import '@common/components';
+import { CouponCell, CouponList } from 'vant';
+
+Vue.use(CouponCell).use(CouponList);
 Vue.use(Area);
 Vue.use(AddressEdit);
 Vue.use(Swipe).use(SwipeItem);
