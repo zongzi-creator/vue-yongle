@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <button @click="handleMore()" class="more">查看更多</button>
+      <button @click="handleMore(pageNum++)" class="more">查看更多</button>
       <Footer />
     </div>
     <!-- 底部 -->
@@ -28,7 +28,8 @@ export default {
   name: "SubjectPage",
   data() {
     return {
-      list: []
+      list: [],
+      pageNum:2
     };
   },
   created() {

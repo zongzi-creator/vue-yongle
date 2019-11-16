@@ -67,9 +67,12 @@ export const subjectPage=()=>http({
     // https://m.228.cn/server/subject/list.json                          
 })
 
-export const morePage=()=>http({
+export const morePage=(pageNum)=>http({
     method:"get",
-    url:'/server/subject/more.json?pageNum=2' 
+    url:'/server/subject/more.json',
+    data:{
+        pageNum:pageNum
+    } 
     // 活动专区更多页面请求接口   
     // https://m.228.cn/server/subject/                        
 })
