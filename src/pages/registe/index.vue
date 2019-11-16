@@ -47,7 +47,7 @@ export default {
         }
         alert("该账户存在")
         console.log(data)
-      }else{
+      }else if(this.username!="" && this.password!=""){
         let data = await getaxios(this.username,this.password);
         alert("注册成功")
         this.$router.push("/login")

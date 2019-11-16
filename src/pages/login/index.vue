@@ -38,9 +38,10 @@ export default {
       },
      async registe(){
         let data=await searchusername(this.username,this.password);
-        if(data.length>0){
+        if(data.length>0 && this.username!="" && this.password!=""){
           alert("登录成功")
-        }else{
+          this.$router.push("/")
+        }else if(this.username=="" && this.password==""){
           alert("用户名密码错误")
       }
     }
