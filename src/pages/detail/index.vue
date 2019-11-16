@@ -266,6 +266,7 @@ export default {
 }
 .detail-body .detailMain {
   height: 100%;
+  padding-bottom:.5rem;
   overflow-y: auto !important;
 }
 .detail-body .con-tit {

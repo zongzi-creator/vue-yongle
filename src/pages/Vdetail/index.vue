@@ -34,7 +34,6 @@ export default {
       let data = await venue(detailid);
       this.Venue = data.data.venue;
       this.Vdetail = data.data.products;
-      console.log(data, this.Venue, this.Vdetail);
     }
   }
 };

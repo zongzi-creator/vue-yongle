@@ -29,7 +29,6 @@ export default {
   methods: {
     async handleSlider() {
       let data = await recommend();
-      console.log(data)
       this.images=data.data.slideList;
     }
   }
