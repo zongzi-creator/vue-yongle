@@ -57,7 +57,6 @@ export const venue=(id)=>http({
 export const search=(search)=>http({
     method:"get",
     url:'/server/search/s/'+search+'.json',
-<<<<<<< HEAD
     // 搜索页请求接口
 })
 
@@ -84,10 +83,6 @@ export const CT=()=>http({
     // 城市页面请求接口   
     // https://m.228.cn/server/content/city/list.json})
 })
-=======
-  
-})
-
 
 export const searchusername=(username,password)=>http({
     method: "get",
