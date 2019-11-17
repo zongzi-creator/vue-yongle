@@ -9,7 +9,7 @@
     <p class="p">{{this.$store.state.mun}}</p>
     <div class="mine-main">
       <div class="bottom">
-        <router-link to="#" tag="span">
+        <router-link to="/coupon" tag="span">
           <p>0张</p>
           <p>现金券</p>
         </router-link>
@@ -26,7 +26,7 @@
         <router-link to="/goodslist" tag="span">
           <i class="iconfont icon-huatong"></i>我的订单
         </router-link>
-        <router-link to="#" tag="span">
+        <router-link to="/coupon" tag="span">
           <i class="iconfont icon-youhuiquan"></i>现金券
         </router-link>
       </div>
@@ -37,12 +37,12 @@
         <router-link to="/love" tag="span">
           <i class="iconfont icon-xihuan"></i>我的收藏
         </router-link>
-        <router-link to="#" tag="span">
+        <router-link to="/dengji" tag="span">
           <i class="iconfont icon-dengji"></i>我的登记
         </router-link>
       </div>
       <div class="registertwo">
-        <router-link to="#" tag="span">
+        <router-link to="/question" tag="span">
           <i class="iconfont icon-dengji-"></i>我的提问
         </router-link>
         <router-link to="#" tag="span">
