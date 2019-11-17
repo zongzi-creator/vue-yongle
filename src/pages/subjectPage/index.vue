@@ -1,13 +1,10 @@
 <template>
   <div id="body" class="sub-body">
     <div class="bodybg"></div>
-    <div class="head-tit">
-      <router-link to="/" class="iconfont icon-fanhui goback"></router-link>
-      <span class="word">活动专区</span>
-    </div>
+    <Header title="活动专区" />
     <div class="subMain">
-      <div v-for="(itemAll,index) in list" :key="index">
-        <div class="list" v-for="(item,index) in itemAll" :key="index">
+      <div class="contL" v-for="(itemAll,index) in list" :key="index">
+        <div  class="list" v-for="(item,index) in itemAll" :key="index">
           <div class="photo">
             <img :src="'//static.228.cn'+item.IMG" />
           </div>
@@ -15,10 +12,9 @@
         </div>
       </div>
 
-      <button @click="handleMore()" class="more">查看更多</button>
+      <button @click="handleMore(pageNum++)" class="more">查看更多</button>
       <Footer />
     </div>
-    <!-- 底部 -->
   </div>
 </template>
 <script>
@@ -28,7 +24,8 @@ export default {
   name: "SubjectPage",
   data() {
     return {
-      list: []
+      list: [],
+      pageNum: 2
     };
   },
   created() {
@@ -40,23 +37,22 @@ export default {
       this.list.push(data.data.subjectPage.list);
     },
     async handleMore() {
-      let data = await morePage();
+      let data = await morePage(this.pageNum);
       this.list.push(data.data.subjectPage.list);
     }
   }
 };
 </script>
-
-
 <style>
 .sub-body .subMain {
   font-size: 0.14rem;
   font-weight: 400;
-  padding-bottom: 0.5rem;
   margin: 0.15rem;
   overflow-y: auto !important;
 }
-
+.sub-body .contL {
+  overflow-y: auto !important;
+}
 .sub-body .list {
   flex-shrink: 0;
   margin-bottom: 0.2rem;
@@ -80,5 +76,14 @@ export default {
   margin: 0.2rem;
   font-size: 0.17rem;
   font-weight: bold;
+}
+.sub-body .more {
+  width: 1.5rem;
+  margin-left: 0.8rem;
+  height: 0.3rem;
+  border-radius: 1rem;
+  font-size: 0.14rem;
+  color: #ff3a56;
+  background: #fff;
 }
 </style>
