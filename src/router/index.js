@@ -17,6 +17,7 @@ import SubjectPage from "../pages/subjectPage";
 import Login from "../pages/login"
 import Registe from "../pages/registe"
 import store from "../store"
+
 Vue.use(VueRouter);
 
 //路由的配置
