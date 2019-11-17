@@ -1,6 +1,6 @@
 <template>
   <div id="body" class="Search-body">
-    <Header title="搜索"/>
+    <Header title="搜索" />
     <div class="head">
       <i class="iconfont icon-sousuo"></i>
       <input type="search" v-model="value" />
@@ -33,6 +33,7 @@
 </template>
 <script>
 import { search } from "../../api/myadress";
+
 export default {
   name: "Search",
   data() {
@@ -61,12 +62,10 @@ export default {
   },
   methods: {
     render(data) {
-        this.search=data;
-
-        
-          if(this.value==""){
-            this.search=[]
-        }
+      this.search = data;
+      if (this.value == "") {
+        this.search = [];
+      }
     }
   }
 };
@@ -74,22 +73,22 @@ export default {
 
 
 <style>
-.container{
-  min-height:2.4rem;
+.container {
+  min-height: 2.4rem;
 }
 .Search-body .err {
   font-size: 0.2rem;
   position: absolute;
   top: 30%;
   left: 32%;
-  animation: jump 3s infinite;
+  animation: jump 2.5s infinite;
 }
 @keyframes jump {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(150px);
+    transform: translateY(80px);
   }
   0% {
     transform: translateY(0);
@@ -102,9 +101,9 @@ export default {
   justify-content: space-around;
   padding: 0.2rem 0.2rem;
   background: white;
-  margin-bottom: .2rem;
+  margin-bottom: 0.2rem;
 }
-.Search-main{
+.Search-main {
   overflow-y: auto !important;
 }
 .Search-body .head input {

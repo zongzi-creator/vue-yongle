@@ -6,7 +6,7 @@
       <b class="iconfont icon-kefu"></b>
       <router-link to="/setting" tag="em" class="iconfont icon-shezhi"></router-link>
     </div>
-    <router-link to="/login" tag="p" class="p">111</router-link>
+    <p class="p">{{this.$store.state.mun}}</p>
     <div class="mine-main">
       <div class="bottom">
         <router-link to="#" tag="span">
@@ -53,16 +53,21 @@
   </div>
 </template>
 <script>
+import { watch } from 'fs';
+
 export default {
   name: "Mine",
   created() {
     document.title = this.$route.meta.title;
+        // console.log(this.$observer)
+ 
   },
    methods:{
     goback(){
       this.$router.back();
-    }
-  }
+    },
+  },
+
 };
 </script>
 <style>
@@ -122,7 +127,6 @@ export default {
 }
 .Mine-body .mine-main {
   height: 100%;
-  overflow-y: auto;
   flex-shrink: 0;
   padding-bottom: 3rem;
 }

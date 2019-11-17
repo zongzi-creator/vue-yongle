@@ -34,15 +34,19 @@ export default {
   },
   methods: {
       back(){
-          this.$router.push("/mine")
+          this.$router.go(-1)
       },
      async registe(){
         let data=await searchusername(this.username,this.password);
         if(data.length>0 && this.username!="" && this.password!=""){
           alert("登录成功")
+          this.$store.state.n=1
+          this.$store.dispatch("going",this.username)
           this.$router.push("/")
-        }else if(this.username=="" && this.password==""){
-          alert("用户名密码错误")
+        }else{
+          if((this.username!="" && this.password!="") || (this.password==""&& this.password=="")){
+            alert("用户名密码错误")
+          }
       }
     }
   }
@@ -72,7 +76,6 @@ export default {
   height: 0.34rem;
   justify-content: space-around;
   padding: 0 0.2rem;
-  margin-top: 0.04rem;
 }
 .body-login .head input {
   border-radius: 1rem;

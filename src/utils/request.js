@@ -11,7 +11,6 @@ server.interceptors.request.use((config)=>{
     if(config.method == "get"){
         config.params = {...config.data};
     }
-
     //config.headers["content-type"] = "applicetion/json";
     //config.headers["token"] = "";
     return config;

@@ -105,6 +105,7 @@ export default {
   width: 100%;
   overflow: hidden;
   z-index: 1;
+
 }
 .detail-body .head-bg .bgImg {
   position: absolute;

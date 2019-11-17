@@ -16,7 +16,7 @@ import SetAdress from "../pages/setAdress";
 import SubjectPage from "../pages/subjectPage";
 import Login from "../pages/login"
 import Registe from "../pages/registe"
-
+import store from "../store"
 Vue.use(VueRouter);
 
 //路由的配置
@@ -71,7 +71,9 @@ const router = new VueRouter({
       component: Mine,
       meta: {
         title:"我的",
-        tabFlag: true
+        tabFlag: true,
+        requiredAuth:true
+
       } 
     },
     {
@@ -144,4 +146,17 @@ const router = new VueRouter({
     }
   ]
 });
+
+router.beforeEach((to,from,next)=>{
+    if(to.path != "/login" && to.meta.requiredAuth){
+        if(store.state.n==1){
+          next()
+        }else{
+          next("/login")
+        }
+    }else{
+      next()
+    }
+})
+
 export default router;

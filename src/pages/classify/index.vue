@@ -2,14 +2,16 @@
   <div id="body" class="Classify-body">
     <Header title="分类" sousuo/>
     <div class="header">
-      <router-link to="/city" tag="span" class="iconfont">
+      <router-link to="/cities" tag="span" class="iconfont1">
         全国
         <i class="iconfont icon-xiasanjiaoxing"></i>
       </router-link>
+
       <router-link to="/classify" tag="span" class="iconfont">
         全部分类
         <i class="iconfont icon-xiasanjiaoxing"></i>
       </router-link>
+
       <router-link to="#" tag="span" class="iconfont">
         全部时间
         <i class="iconfont icon-xiasanjiaoxing"></i>
@@ -77,12 +79,15 @@ export default {
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-around;
+  align-items: center
 }
+
 .Classify-body .header span {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 0.14rem !important;
+  height:.2rem;
   color: #999ea3;
 }
 .Classify-body .header span i {

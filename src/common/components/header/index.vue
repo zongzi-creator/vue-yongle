@@ -1,6 +1,6 @@
 <template>
   <div class="head-tit">
-    <v-touch @tap="goback()" tag="a" class="iconfont icon-fanhui goback"></v-touch>
+    <p @click="goback()" tag="p" class="iconfont icon-fanhui goback"></p>
     <span class="word">{{title}}</span>
     <router-link to="/search" tag="span" v-if="sousuo" class="iconfont icon-sousuo"></router-link>
   </div>
@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     goback() {
-      this.$router.back();
+      this.$router.push("/home/recommend");
     }
   }
 };

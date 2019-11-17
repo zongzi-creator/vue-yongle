@@ -8,6 +8,11 @@ import { AddressEdit } from 'vant';
 import { Area } from 'vant';
 import '@vant/touch-emulator';
 import '@common/components';
+import store from "./store"
+import observer from "../observer"
+Vue.prototype.$observer = observer;
+
+
 Vue.use(Area);
 Vue.use(AddressEdit);
 Vue.use(Swipe).use(SwipeItem);
@@ -17,5 +22,7 @@ Vue.use(VueTouch, {name: 'v-touch'})
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
+
