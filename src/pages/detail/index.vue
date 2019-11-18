@@ -21,7 +21,7 @@
       <div class="head-con">
         <div class="left">
           <img :src="'//static.228.cn'+resu.PBIGIMG" style="background: rgba(141, 49, 1, 0.3);" />
-          <!-- <i id="statusDiv" class="tip gradual-red white">售票中</i> -->
+          <i id="statusDiv" :class="(resu.STATUS=='1')?'ticket-state-blue tip tip-grabSeat':'tip gradual-red white'">{{(resu.STATUS=='1')?"预定":"售票中"}}</i>
         </div>
         <div class="right">
           <h3 class="white">{{resu.NAME}}</h3>

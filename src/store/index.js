@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import city from "./city"
 Vue.use(Vuex)
 
 let  state={
@@ -23,7 +23,6 @@ let mutations={
   },
   goingto(state,parmas){
     state.mun=parmas
-    console.log(state.mun)
   }
 }
 
@@ -32,4 +31,8 @@ const store=new Vuex.Store({
   actions,
   mutations
 })
-export default store
+export default new Vuex.Store({
+  modules:{
+    city
+  }
+}) 
