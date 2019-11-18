@@ -1,12 +1,12 @@
 <template>
   <div id="body" class="Mine-body">
     <div class="head">
-      <v-touch @tap="goback()" tag="i" class="iconfont icon-fanhui"></v-touch>
+      <!-- <v-touch @tap="goback()" tag="i" class="iconfont icon-fanhui"></v-touch> -->
       <div class="headtou"></div>
       <b class="iconfont icon-kefu"></b>
       <router-link to="/setting" tag="em" class="iconfont icon-shezhi"></router-link>
     </div>
-    <p class="p">{{this.$store.state.mun}}</p>
+    <p class="p">{{names}}</p>
     <div class="mine-main">
       <div class="bottom">
         <router-link to="/coupon" tag="span">
@@ -17,7 +17,7 @@
           <p>未启用</p>
           <p>电子钱包</p>
         </router-link>
-        <router-link to="#" tag="span">
+        <router-link to="#" tag="span" >
           <p>0</p>
           <p>积分</p>
         </router-link>
@@ -49,6 +49,7 @@
           <i class="iconfont icon-pingzheng-normal"></i>观演凭证
         </router-link>
       </div>
+
     </div>
   </div>
 </template>
@@ -57,11 +58,18 @@ import { watch } from 'fs';
 
 export default {
   name: "Mine",
+    data(){
+    return{
+        names:""
+    }
+  },
+  
   created() {
     document.title = this.$route.meta.title;
         // console.log(this.$observer)
- 
+        this.names=window.localStorage.getItem("name")
   },
+
    methods:{
     goback(){
       this.$router.back();
@@ -71,6 +79,19 @@ export default {
 };
 </script>
 <style>
+#body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y:auto 
+    }
 .Mine-body .head i {
   position: relative;
   top: 0.12rem;

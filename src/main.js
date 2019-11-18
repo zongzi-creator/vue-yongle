@@ -6,6 +6,8 @@ import { Lazyload } from 'vant';
 import { Swipe, SwipeItem } from 'vant';
 import { AddressEdit } from 'vant';
 import { Area } from 'vant';
+import { Sku } from 'vant';
+import { Card } from 'vant';
 import '@vant/touch-emulator';
 import '@common/components';
 import store from "./store"
@@ -14,7 +16,8 @@ Vue.prototype.$observer = observer;
 
 
 import { CouponCell, CouponList } from 'vant';
-
+Vue.use(Card);
+Vue.use(Sku);
 Vue.use(CouponCell).use(CouponList);
 Vue.use(Area);
 Vue.use(AddressEdit);

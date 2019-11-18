@@ -1,5 +1,5 @@
 <template>
-  <div id="body" class="detail-body">
+  <div id="body" class="detail-body  sku-container" ref="btn">
     <div class="bodybg"></div>
     <div class="detailHeader head">
       <div class="head-bg">
@@ -57,18 +57,60 @@
     </div>
     <footer>
       <router-link tag="a" to="#" class="iconfont icon-kefu"></router-link>
-      <router-link tag="button" to="/goodslist" class="butt">立即预定</router-link>
+       <van-button  class="butt"
+          block
+          type="primary"
+          @click="go()"
+        
+          
+        >
+         立即预定
+
+        </van-button>
+   
+   
     </footer>
+     <van-sku
+          v-model="showBase"
+          :sku="skuData.sku"
+          :goods="skuData.goods_info"
+          :goods-id="skuData.goods_id"
+          :hide-stock="skuData.sku.hide_stock"
+          :quota="skuData.quota"
+          :quota-used="skuData.quota_used"
+          :initial-sku="initialSku"        
+          reset-stepper-on-hide
+          reset-selected-sku-on-hide
+          disable-stepper-input
+          :close-on-click-overlay="closeOnClickOverlay" 
+          :custom-sku-validator="customSkuValidator"  
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
+        />
   </div>
 </template>
 
 <script>
 import { detail } from "../../api/myadress";
+import skuData from '../shop/data'; 
+
 export default {
   name: "Detail",
   data() {
     return {
-      resu: []
+      resu: [],
+      skuData:skuData,
+      showBase: false,
+      showCustom: false,
+      showStepper: false,
+      showSoldout: false,
+      closeOnClickOverlay: true,
+      initialSku: {
+        s1: '30349',
+        s2: '1193',
+        selectedNum: 10
+      },
+      customSkuValidator: () => '请选择xxx!', 
     };
   },
   created() {
@@ -82,7 +124,22 @@ export default {
     },
     goback() {
       this.$router.back();
-    }
+    },
+    go(){
+      this.showBase=true
+        console.log(this.$refs.btn)
+    },
+
+
+       onBuyClicked(data) {
+      this.$toast('buy:' + JSON.stringify(data));
+      console.log(JSON.stringify(data))
+    },
+
+    onAddCartClicked(data) {
+      this.$toast('add cart:' + JSON.stringify(data));
+    }, 
+    
   }
 };
 </script>
@@ -324,6 +381,8 @@ export default {
   width: 2.3rem;
   font-size: 0.2rem;
   height: 0.45rem;
+  text-align:center;
+  line-height:.45rem;
   border-radius: 1rem;
   outline: none;
   border: none;

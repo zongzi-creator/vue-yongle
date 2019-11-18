@@ -32,17 +32,24 @@ export default {
       use: []
     };
   },
+  created(){
+
+  },
   methods: {
       back(){
-          this.$router.go(-1)
+          this.$router.push("/")
       },
      async registe(){
         let data=await searchusername(this.username,this.password);
         if(data.length>0 && this.username!="" && this.password!=""){
           alert("登录成功")
           this.$store.state.n=1
+          window.localStorage.setItem('token',this.$store.state.n)
           this.$store.dispatch("going",this.username)
+          window.localStorage.setItem('name',this.$store.state.mun)
           this.$router.push("/")
+          this.username="",
+          this.password=""
         }else{
           if((this.username!="" && this.password!="") || (this.password==""&& this.password=="")){
             alert("用户名密码错误")

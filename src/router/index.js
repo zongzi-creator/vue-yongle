@@ -14,14 +14,13 @@ import Love from "../pages/love";
 import Setting from "../pages/setting";
 import SetAdress from "../pages/setAdress";
 import SubjectPage from "../pages/subjectPage";
-import Registe from "../pages/registe"
 import store from "../store"
 import Login from "../pages/login";
 import Registe from "../pages/registe";
 import Coupon from "../pages/coupon";
 import Question from "../pages/question";
 import Dengji from "../pages/dengji";
-
+import Shop from "../pages/shop"
 Vue.use(VueRouter);
 //路由的配置
 const router = new VueRouter({
@@ -44,8 +43,9 @@ const router = new VueRouter({
             tabFlag: true
           }
         },
+    
         {
-          path: "site",
+          path:"site",
           component: Site,
           meta: {
             title:"",
@@ -53,6 +53,13 @@ const router = new VueRouter({
           }
         }
       ]
+    },
+    {
+      path:"/shop",
+      component:Shop,
+      meta:{
+        title:"购物"
+      }
     },
     {
       path: "/classify",
@@ -176,7 +183,7 @@ const router = new VueRouter({
 
 router.beforeEach((to,from,next)=>{
     if(to.path != "/login" && to.meta.requiredAuth){
-        if(store.state.n==1){
+        if(window.localStorage.getItem("token")){
           next()
         }else{
           next("/login")

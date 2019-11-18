@@ -3,7 +3,7 @@
     <Header title="设置"/>
     <main>
       <p>
-        <b>昵称</b>
+        <b>昵称</b>{{name}}
       </p>
       <p>
         <b>注册手机</b>
@@ -37,7 +37,7 @@
       </p>
     </main>
     <footer>
-      <button>安全退出</button>
+      <v-touch tag="button" @tap="delet">安全退出</v-touch>
     </footer>
   </div>
 </template>
@@ -47,6 +47,19 @@ export default {
   created() {
     document.title = this.$route.meta.title;
   },
+  data(){
+    return{
+      name:window.localStorage.getItem("name")
+    }
+  },
+  methods:{
+    delet(){
+      window.localStorage.clear()
+      alert("退出成功")
+      setTimeout(this.$router.push("/login"),1000)
+      // this.$router.push("/login")
+    }
+  }
 };
 </script>
 <style >
@@ -93,6 +106,9 @@ export default {
 .Setting-body footer {
   height: 0.5rem;
   display: flex;
+  position:fixed;
+  bottom:0;
+  width:100%;
   align-items: center;
   box-shadow: 0px 2px 6px 0px rgba(255, 37, 68, 0.2);
 }

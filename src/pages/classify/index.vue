@@ -152,4 +152,7 @@ export default {
   color: #ff3a56;
   background: #fff;
 }
+.red{
+  color:red
+}
 </style>
