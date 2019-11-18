@@ -158,10 +158,9 @@ export default {
   border-radius: 1rem;
   margin-top: 0.25rem;
   color: #ccc;
-  background: rgba(255, 255, 255, 0.5);
+  background:#ff3a56;
   outline: none;
   font-size: 0.18rem;
-
   border: none;
 }
 .body-login .Lmain a {

@@ -44,24 +44,7 @@ export default {
 };
 </script>
 <style>
-<<<<<<< HEAD
-#body{
-  display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 0.5rem;
-    flex-shrink: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-y:auto
-}
-.sub-body .subMain{
-=======
 .sub-body .subMain {
->>>>>>> ac070466e4e50254a4f1203606071a0eb5bb31fb
   font-size: 0.14rem;
   font-weight: 400;
   margin: 0.15rem;

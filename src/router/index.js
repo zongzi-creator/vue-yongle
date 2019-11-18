@@ -14,7 +14,6 @@ import Love from "../pages/love";
 import Setting from "../pages/setting";
 import SetAdress from "../pages/setAdress";
 import SubjectPage from "../pages/subjectPage";
-import Registe from "../pages/registe"
 import store from "../store"
 import Login from "../pages/login";
 import Registe from "../pages/registe";

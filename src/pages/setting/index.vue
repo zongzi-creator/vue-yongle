@@ -37,7 +37,7 @@
       </p>
     </main>
     <footer>
-      <button>安全退出</button>
+      <router-link to="/login" tag="button" >安全退出</router-link>
     </footer>
   </div>
 </template>
