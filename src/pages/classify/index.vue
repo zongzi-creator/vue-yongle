@@ -1,6 +1,6 @@
 <template>
   <div id="body" class="Classify-body">
-    <Header title="分类" sousuo/>
+    <Header title="分类" sousuo />
     <div class="header">
       <router-link to="/cities" tag="span" class="iconfont1">
         全国
@@ -27,7 +27,9 @@
       >
         <div class="left">
           <img :src="'//static.228.cn'+item.pbigimg" />
-          <!-- <i class="ticket-state-blue tip tip-grabSeat">预订</i> -->
+          <i
+            :class="(item.status=='1')?'ticket-state-blue tip tip-grabSeat':'gradual-red tip tip-grabSeat'"
+          >{{(item.status=='1')?"预定":"售票中"}}</i>
         </div>
         <div class="right">
           <b class="name">{{item.name}}</b>
@@ -67,7 +69,7 @@ export default {
       for (let i = 0; i < data.length; i++) {
         this.resu.push(data[i]);
       }
-    },
+    }
   }
 };
 </script>
@@ -79,7 +81,7 @@ export default {
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
 }
 
 .Classify-body .header span {
@@ -87,7 +89,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   font-size: 0.14rem !important;
-  height:.2rem;
+  height: 0.2rem;
   color: #999ea3;
 }
 .Classify-body .header span i {
@@ -107,7 +109,11 @@ export default {
   display: flex;
   flex-shrink: 0;
 }
-.Classify-body .main img {
+.Classify-body .main .left {
+  position: relative;
+}
+
+.Classify-body .main .left img {
   flex-shrink: 0;
   width: 0.85rem;
   height: 1.13rem;
@@ -143,6 +149,10 @@ export default {
   margin-top: 0.1rem;
   line-height: 0.14rem;
 }
+.Classify-body .span1 b {
+  margin-top: 0.1rem;
+  color: #ff3a56;
+}
 .Classify-body .more {
   width: 1.5rem;
   margin-left: 0.8rem;
@@ -151,5 +161,30 @@ export default {
   font-size: 0.14rem;
   color: #ff3a56;
   background: #fff;
+}
+.ticket-state-blue {
+  background: linear-gradient(to right, #3dd9c1, #00a0c2);
+}
+.tip {
+  display: block;
+  height: 0.2rem;
+  line-height: 0.2rem;
+  color: #fff;
+  font-style: normal;
+  position: absolute;
+  top: 0;
+  font-size: 0.11rem;
+  font-weight: bold;
+  border-radius: 0.1rem 0;
+  padding: 0 0.05rem;
+  left: 0;
+  text-align: center;
+}
+.tip-grabSeat {
+  background-position: 0 -24.19rem;
+}
+.gradual-red {
+  background: linear-gradient(to right, #ff7e6f, #ff2959);
+  box-shadow: 0px 2px 6px 0px rgba(255, 37, 68, 0.2);
 }
 </style>
