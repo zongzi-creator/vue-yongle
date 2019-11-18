@@ -61,8 +61,6 @@
           block
           type="primary"
           @click="go()"
-        
-          
         >
          立即预定
 
@@ -127,7 +125,6 @@ export default {
     },
     go(){
       this.showBase=true
-        console.log(this.$refs.btn)
     },
 
 

@@ -21,11 +21,7 @@ import Registe from "../pages/registe";
 import Coupon from "../pages/coupon";
 import Question from "../pages/question";
 import Dengji from "../pages/dengji";
-<<<<<<< HEAD
 import Shop from "../pages/shop"
-=======
-
->>>>>>> haoshuai
 Vue.use(VueRouter);
 //路由的配置
 const router = new VueRouter({
