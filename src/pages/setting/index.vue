@@ -44,13 +44,15 @@
 <script>
 export default {
   name: "Setting",
-  created() {
-    document.title = this.$route.meta.title;
-  },
+
   data(){
     return{
-      name:window.localStorage.getItem("name")
+      name:""
     }
+  },
+    created() {
+    document.title = this.$route.meta.title;
+    this.name=window.localStorage.getItem("name")
   },
   methods:{
     delet(){

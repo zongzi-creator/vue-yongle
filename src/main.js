@@ -18,6 +18,10 @@ Vue.prototype.$observer = observer;
 import { CouponCell, CouponList } from 'vant';
 Vue.use(CouponCell).use(CouponList);
 Vue.use(Area);
+Vue.use(Sku);
+Vue.use(Card);
+
+
 Vue.use(AddressEdit);
 Vue.use(Swipe).use(SwipeItem);
 Vue.use(Lazyload);

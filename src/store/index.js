@@ -31,8 +31,5 @@ const store=new Vuex.Store({
   actions,
   mutations
 })
-export default new Vuex.Store({
-  modules:{
-    city
-  }
-}) 
+export default  store
+  

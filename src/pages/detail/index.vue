@@ -60,7 +60,7 @@
        <van-button  class="butt"
           block
           type="primary"
-          @click="go()"
+          @click="showBase=true"
         >
          立即预定
 
@@ -125,6 +125,7 @@ export default {
     },
     go(){
       this.showBase=true
+      console.log("1")
     },
 
 
