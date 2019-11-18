@@ -18,9 +18,9 @@ import SubjectPage from "../pages/subjectPage";
 import store from "../store"
 import Login from "../pages/login";
 import Registe from "../pages/registe";
-import Coupon from "../pages/coupon";
-import Question from "../pages/question";
-import Dengji from "../pages/dengji";
+// import Coupon from "../pages/coupon";
+// import Question from "../pages/question";
+// import Dengji from "../pages/dengji";
 
 Vue.use(VueRouter);
 //路由的配置
