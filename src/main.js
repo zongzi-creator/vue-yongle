@@ -16,8 +16,6 @@ Vue.prototype.$observer = observer;
 
 
 import { CouponCell, CouponList } from 'vant';
-Vue.use(Card);
-Vue.use(Sku);
 Vue.use(CouponCell).use(CouponList);
 Vue.use(Area);
 Vue.use(AddressEdit);
